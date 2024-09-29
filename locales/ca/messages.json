@@ -1558,6 +1558,12 @@
     "configurationSerialRX": {
         "message": "Proveïdor del receptor sèrie"
     },
+    "someRXTypesDisabled": {
+        "message": "Alguns proveïdors de receptors no són compatibles amb la configuració de compilació actual."
+    },
+    "serialRXNotSupported": {
+        "message": "El proveïdor de receptor seleccionat no és compatible amb la configuració de compilació actual. Seleccioneu un altre proveïdor o actualitzeu el microprogramari amb el protocol de ràdio correcte seleccionat a la configuració de compilació."
+    },
     "configurationSpiRX": {
         "message": "Proveïdor del Receptor SPI Bus"
     },
@@ -4759,6 +4765,15 @@
     "powerBatteryWarning": {
         "message": "Voltatge d'avís de ceŀla"
     },
+    "powerBatteryMinimumHelp": {
+        "message": "El voltatge que es considera críticament baix, i activarà els avisos corresponents. Avís \"LAND NOW\" a l'OSD i bip audible si es solda un bip. També ajuda en el càlcul del recompte de cel·les."
+    },
+    "powerBatteryMaximumHelp": {
+        "message": "El voltatge d'una cel·la completament carregada. Ajuda amb el càlcul del recompte de cel·les."
+    },
+    "powerBatteryWarningHelp": {
+        "message": "El voltatge que es considera baix, i activarà els avisos corresponents. Avís de \"BATERIA BAIXA\" a l'OSD."
+    },
     "powerCalibrationManagerButton": {
         "message": "Calibració"
     },
@@ -5523,6 +5538,13 @@
     },
     "osdDescElementDebug": {
         "message": "Variables de Debug"
+    },
+    "osdTextElementDebug2": {
+        "message": "Debug2",
+        "description": "One of the elements of the OSD"
+    },
+    "osdDescElementDebug2": {
+        "message": "Debug variables per debug 4-7"
     },
     "osdTextElementPIDRoll": {
         "message": "PID Roll",
@@ -7298,5 +7320,24 @@
     "betaflightSupportButton": {
         "message": "Wiki",
         "description": "Text for the button to open the support URL"
+    },
+    "showNotifications": {
+        "message": "Mostra les notificacions per a operacions llargues"
+    },
+    "flashEraseDoneNotification": {
+        "message": "S'ha completat l'esborrat del flash de dades",
+        "description": "Notification message when flash erase is done"
+    },
+    "flashDownloadDoneNotification": {
+        "message": "S'han baixat els registres de flash de dades",
+        "description": "Notification message when flash logs are done downloading"
+    },
+    "programmingSuccessfulNotification": {
+        "message": "FC s'ha programat correctament",
+        "description": "Notification message when programming is successful"
+    },
+    "programmingFailedNotification": {
+        "message": "La programació de la FC ha fallat",
+        "description": "Notification message when programming is unsuccessful"
     }
 }

@@ -96,6 +96,9 @@ const DEBUG = {
         {text: "EZLANDING"},
         {text: "TPA"},
         {text: "S_TERM"},
+        {text: "SPA"},
+        {text: "TASK"},
+        {text: "ALTHOLD"},
     ],
 
     fieldNames: {
@@ -760,6 +763,17 @@ const DEBUG = {
             'debug[5]': 'Actual execution time (us)',
             'debug[6]': 'Difference estimated vs actual',
             'debug[7]': 'Late count',
+        },
+        'ALTHOLD': {
+            'debug[all]': 'Altitude Hold',
+            'debug[0]': 'Altitude Target',
+            'debug[1]': 'Measured Altitude',
+            'debug[2]': 'Throttle Adjustment',
+            'debug[3]': 'Not used',
+            'debug[4]': 'Altitude P',
+            'debug[5]': 'Altitude I',
+            'debug[6]': 'Altitude D',
+            'debug[7]': 'Altitude FF',
         },
     },
 

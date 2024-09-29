@@ -657,7 +657,7 @@
         "message": "Betaflight <a href=\"https:\/\/discord.betaflight.com\/invite\" target=\"_blank\" rel=\"noopener noreferrer\">сервер Discord<\/a>.<br \/>Делись опытом полетов, обсуждай Betaflight, помогай другим людям и узнавай новое для себя."
     },
     "statisticsDisclaimer": {
-        "message": "Betaflight Конфигуратор собирает анонимную статистику использования. Например, эти данные включают (но не ограничиваются) количество запусков, географический регион пользователей, типы полетов, версии прошивки, использование UI элементов и вкладок и т.д. Выжимка этих данных отправляется <a href=\"https:\/\/datastudio.google.com\/u\/0\/reporting\/1pK1PFw0eWmsgl2npvuzwAqscVzlhJvuF\" target=\"_blank\" rel=\"noopener noreferrer\">здесь<\/a>. Сбор статистики производится, чтобы лучше понять, как используется Betaflight Конфигуратор, понять тенденции сообщества и возможные улучшения интерфейса. Пользователи могут отказаться от сбора данных во вкладке Параметры."
+        "message": "Betaflight Конфигуратор собирает анонимную статистику использования. Например, эти данные включают (но не ограничиваются) количество запусков, географический регион пользователей, типы полетов, версии прошивки, использование UI элементов и вкладок и т.д. Статистика по этим данным приведена <a href=\"https:\/\/datastudio.google.com\/u\/0\/reporting\/1pK1PFw0eWmsgl2npvuzwAqscVzlhJvuF\" target=\"_blank\" rel=\"noopener noreferrer\">здесь<\/a>. Сбор статистики производится, чтобы лучше понять, как используется Betaflight Конфигуратор, понять тенденции сообщества и возможные улучшения интерфейса. Пользователи могут отказаться от сбора данных во вкладке Параметры."
     },
     "defaultButtonFirmwareFlasher": {
         "message": "Программатор"
@@ -1188,7 +1188,7 @@
         "message": "Если эта настройка включена и не обнаружено подключение дисплея (или выключено питание дисплея), будет задержка  примерно 10 секунд при каждой перезагрузке полетного контроллера."
     },
     "featureOSD": {
-        "message": "On Screen Display (отображение данных поверх изображения камеры)"
+        "message": "Отображение данных поверх изображения камеры"
     },
     "featureOSDTip": {
         "message": "Включить OSD. Настройки доступны в разделе OSD"
@@ -4751,6 +4751,15 @@
     "powerBatteryWarning": {
         "message": "Предупреждать, если напряжение на банке"
     },
+    "powerBatteryMinimumHelp": {
+        "message": "Напряжение, считающееся критически низким, вызовет соответствующие предупреждение. Предупреждение 'LAND NOW' в OSD и звуковой сигнал, если он включен. Также участвует в расчете количества ячеек."
+    },
+    "powerBatteryMaximumHelp": {
+        "message": "Напряжение полностью заряженной ячейки. Используется при расчете количества ячеек."
+    },
+    "powerBatteryWarningHelp": {
+        "message": "Напряжение считается низким, и вызовет соответствующее предупреждение 'LOW BATTERY' в OSD."
+    },
     "powerCalibrationManagerButton": {
         "message": "Калибровка"
     },
@@ -5516,6 +5525,13 @@
     "osdDescElementDebug": {
         "message": "Показывать Debug-переменные"
     },
+    "osdTextElementDebug2": {
+        "message": "Debug2",
+        "description": "One of the elements of the OSD"
+    },
+    "osdDescElementDebug2": {
+        "message": "Переменные отладки 4-7"
+    },
     "osdTextElementPIDRoll": {
         "message": "PID крена",
         "description": "One of the elements of the OSD"
@@ -5848,7 +5864,7 @@
         "message": "Приблизительно общее количество полетов"
     },
     "osdTextElementUpDownReference": {
-        "message": "Опрная точка Верх (питч 90 гр)\/Низ (питч -90 гр)",
+        "message": "Опорная точка Верх (тангаж 90 гр)\/Низ (тангаж -90 гр)",
         "description": "OSD Symbol to show when pitch is approaching vertical (90 deg, U) and D for nose down (-90 deg, D)"
     },
     "osdDescUpDownReference": {
@@ -7290,5 +7306,24 @@
     "betaflightSupportButton": {
         "message": "База знаний",
         "description": "Text for the button to open the support URL"
+    },
+    "showNotifications": {
+        "message": "Показывать уведомления для длительных операций"
+    },
+    "flashEraseDoneNotification": {
+        "message": "Удаление данных завершено",
+        "description": "Notification message when flash erase is done"
+    },
+    "flashDownloadDoneNotification": {
+        "message": "Логи загружены",
+        "description": "Notification message when flash logs are done downloading"
+    },
+    "programmingSuccessfulNotification": {
+        "message": "ПК успешно запрограммирован",
+        "description": "Notification message when programming is successful"
+    },
+    "programmingFailedNotification": {
+        "message": "Не удалось запрограммировать ПК",
+        "description": "Notification message when programming is unsuccessful"
     }
 }

@@ -1550,6 +1550,12 @@
     "configurationSerialRX": {
         "message": "Proveedor del Receptor Serie"
     },
+    "someRXTypesDisabled": {
+        "message": "Algunos proveedores del receptor no están soportados por la configuración de compilación actual."
+    },
+    "serialRXNotSupported": {
+        "message": "El proveedor de receptor seleccionado no es compatible con la configuración de compilación actual. Seleccione otro proveedor o actualice el firmware con el protocolo de radio correcto seleccionado en la configuración de compilación."
+    },
     "configurationSpiRX": {
         "message": "Proveedor del Receptor Bus SPI"
     },
@@ -2102,6 +2108,12 @@
     },
     "pidTuningSliderModeHelp": {
         "message": "<strong>Modo Deslizador de Ajuste PID<\/strong><br><br>Puede ser:<br><br>&bull; Apagado - sin deslizadores, introducir valores manualmente<br>&bull; RP - los deslizadores controlan sólo Roll y Pitch, introduce los valores de Yaw manualmente<br>&bull; RPY - los deslizadores controlan todos los valores del PID<br><br><span class=\"message-negative\"><b>Advertencia:<\/b><\/span>Si cambias de modo RP a RPY se sobrescribirán los valores de Yaw con los ajustes del firmware."
+    },
+    "receiverHelpModelId": {
+        "message": "Si estableces la Coincidencia de Modelo a un número distinto de 255, puedes especificar el número de receptor en la página de configuración de OpenTX \/ Edge TX y activar la Coincidencia de Modelo en el script LUA de ELRS para ese modelo. La Coincidencia de Modelo es un número entre 0 y 63, ambos incluidos.<br \/>Mira la documentación de ELRS para más información."
+    },
+    "receiverModelId": {
+        "message": "ID de Coincidencia de Modelo"
     },
     "receiverHelp": {
         "message": "&#8226;  <b><strong><a href=\"https:\/\/betaflight.com\/docs\/wiki\/guides\/current\/Failsafe#testing-failsafe\" target=\"_blank\" rel=\"noopener noreferrer\">¡Comprueba siempre que tu Modo de seguridad funciona correctamente!<\/a><\/strong><\/b> Los ajustes están en la pestaña de Modo de seguridad, sólo visible en Modo experto.<br> &#8226; <b>¡Usa la última versión del firmware del transmisor!<\/b><br> &#8226; <strong><a href=\"https:\/\/betaflight.com\/docs\/development\/Rx#disabling-the-opentxedgetx-adc-filter\" target=\"_blank\" rel=\"noopener noreferrer\">Desactiva el filtro ADC hardware<\/a><\/strong> en el transmisor si usas OpenTx o EdgeTx.<br>Configuración básica: Configura los ajustes del receptor correctamente. Elige el 'Mapa de canales' correcto para tu radio. Comprueba que las barras de Roll, Pitch y otras se mueven correctamente. Ajusta el rango del canal en  el transmisor a valores de ~1000 a ~2000, y ajusta el punto medio en 1500. Para más información, lee la <strong><a href=\"https:\/\/betaflight.com\/docs\/development\/Rx\" target=\"_blank\" rel=\"noopener noreferrer\">documentación<\/a><\/strong>."
@@ -4745,6 +4757,15 @@
     "powerBatteryWarning": {
         "message": "Aviso Voltaje por Celda"
     },
+    "powerBatteryMinimumHelp": {
+        "message": "El voltaje que se considera críticamente bajo, y activará las advertencias correspondientes. Advertencia 'LAND NOW' en el OSD y pitidos si un zumbador está soldado. También se utiliza en el cálculo del número de celdas."
+    },
+    "powerBatteryMaximumHelp": {
+        "message": "El voltaje de una célula completamente cargada. Se utiliza en el cálculo del número de celdas."
+    },
+    "powerBatteryWarningHelp": {
+        "message": "El voltaje que se considera bajo, y activará las advertencias correspondientes. Aviso de 'LOW BATTERY' en el OSD."
+    },
     "powerCalibrationManagerButton": {
         "message": "Calibración"
     },
@@ -5509,6 +5530,13 @@
     },
     "osdDescElementDebug": {
         "message": "Variables de depuración"
+    },
+    "osdTextElementDebug2": {
+        "message": "Depuración2",
+        "description": "One of the elements of the OSD"
+    },
+    "osdDescElementDebug2": {
+        "message": "Variables de depuración 4 a 7"
     },
     "osdTextElementPIDRoll": {
         "message": "PID: roll",
@@ -7284,5 +7312,24 @@
     "betaflightSupportButton": {
         "message": "Wiki",
         "description": "Text for the button to open the support URL"
+    },
+    "showNotifications": {
+        "message": "Mostrar notificaciones para operaciones largas"
+    },
+    "flashEraseDoneNotification": {
+        "message": "El borrado de la memoria flash ha sido completado",
+        "description": "Notification message when flash erase is done"
+    },
+    "flashDownloadDoneNotification": {
+        "message": "Los registros de la memoria flash han sido descargados",
+        "description": "Notification message when flash logs are done downloading"
+    },
+    "programmingSuccessfulNotification": {
+        "message": "La placa ha sido programada correctamente",
+        "description": "Notification message when programming is successful"
+    },
+    "programmingFailedNotification": {
+        "message": "Error al programar la placa",
+        "description": "Notification message when programming is unsuccessful"
     }
 }
