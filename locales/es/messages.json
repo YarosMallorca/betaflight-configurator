@@ -135,6 +135,10 @@
     "rememberLastTab": {
         "message": "Recordar última pestaña al conectar"
     },
+    "meteredConnection": {
+        "message": "Desactivar el acceso a Internet (para conexiones medidas o lentas)",
+        "description": "Text for the option to disable internet access for metered connection or to disable data over slow connections"
+    },
     "analyticsOptOut": {
         "message": "No participar en la recogida anónima de datos estadísticos"
     },
@@ -1115,6 +1119,34 @@
     "initialSetupEepromSaved": {
         "message": "EEPROM <span class=\"message-positive\">guardada<\/span>"
     },
+    "initialSetupNetworkInfo": {
+        "message": "Información de red"
+    },
+    "initialSetupNetworkInfoHelp": {
+        "message": "Muestra el estado de la conexión de red",
+        "description": "Message that pops up to describe the Network Connection section"
+    },
+    "initialSetupNetworkInfoStatus": {
+        "message": "Estado:"
+    },
+    "initialSetupNetworkInfoStatusOnline": {
+        "message": "En línea"
+    },
+    "initialSetupNetworkInfoStatusOffline": {
+        "message": "Desconectado"
+    },
+    "initialSetupNetworkInfoStatusSlow": {
+        "message": "Lenta"
+    },
+    "initialSetupNetworkType": {
+        "message": "Tipo:"
+    },
+    "initialSetupNetworkRtt": {
+        "message": "RTT:"
+    },
+    "initialSetupNetworkDownlink": {
+        "message": "Enlace bajada:"
+    },
     "featureNone": {
         "message": "&lt;Elije Uno&gt;"
     },
@@ -1347,10 +1379,7 @@
         "message": "Calibrar Giro en el primer armado"
     },
     "configurationDigitalIdlePercent": {
-        "message": "Ralentí Motor (%, estático)"
-    },
-    "configurationDigitalIdlePercentHelp": {
-        "message": "El valor de 'ralentí motor (estático)' es el porcentaje del valor máximo del acelerador que es enviado a los ESCs cuando el mando del acelerador está al mínimo y la aeronave está armada.<br><br> Incrementa este valor para obtener más velocidad al ralentí y evitar desincronizaciones. Un valor demasiado alto y la aeronave se notará muy flotante. Un valor muy bajo puede provocar desincronizaciones y que sea lento al iniciar."
+        "message": "Ralentí motor (%)"
     },
     "configurationMotorPoles": {
         "message": "Polos del motor",
@@ -1739,11 +1768,11 @@
     "pidTuningAntiGravityHelp": {
         "message": "Anti Gravedad aumenta I (y también P en 4.3) durante un instante poco después de cambios de aceleración bruscos, aumentando la estabilidad de la actitud durante los acelerones.<br><br>Valores más altos pueden mejorar la estabilidad en máquinas de baja autoridad o en aquellas con un centro de gravedad desplazado."
     },
-    "pidTuningDMin": {
-        "message": "Derivativo (D)",
-        "description": "Table header of the D Min feature in the PIDs tab"
+    "pidTuningDerivative": {
+        "message": "<b>D<\/b>erivativo",
+        "description": "Table header of the Derivative feature in the PIDs tab"
     },
-    "pidTuningDMinFeatureTitle": {
+    "pidTuningDMaxFeatureTitle": {
         "message": "Amortiguación Dinámica \/ Ajustes D Max",
         "description": "Title for the options panel for the D Max feature"
     },
@@ -1751,7 +1780,7 @@
         "message": "Amortiguación<br>Dinámica",
         "description": "Sidebar title for the options panel for the D Max feature"
     },
-    "pidTuningDMinGain": {
+    "pidTuningDMaxGain": {
         "message": "Ganancia",
         "description": "Gain of the D Max feature"
     },
@@ -1759,7 +1788,7 @@
         "message": "El valor de Ganancia de D Max aumenta la sensibilidad del sistema que incrementa D cuando la aeronave gira rápidamente o se agita en turbulencias.<br><br>Valores más altos hacen que D suba más fácilmente, elevando D hacia D Max más rápidamente. Valores de 40 o incluso 50 pueden funcionar bien para construcciones limpias de Freestyle.<br><br>Valores inferiores no elevarán D hacia D Max excepto en movimientos realmente muy rápidos, y puede adaptarse mejor a construcciones tipo carreras minimizando el retraso de D.<br><br>ADVERTENCIA: El valor de Ganancia o el Avance, deben establecerse por encima de 20, o D no aumentará como debería. Establecer ambos a cero bloqueará D en el valor base.",
         "description": "D Max feature helpicon message"
     },
-    "pidTuningDMinAdvance": {
+    "pidTuningDMaxAdvance": {
         "message": "Avance",
         "description": "Advance of the D Max feature"
     },
@@ -1767,13 +1796,13 @@
         "message": "El Avance de D Max añade sensibilidad al factor de Ganancia cuando los mandos se mueven rápidamente.<br><br>El Avance no responde al giro o a las turbulencias. Actúa antes que el factor de Ganancia y en ocasiones es útil para aeronaves de baja autoridad que tienden a retrasarse malamente al inicio de un movimiento.<br><br>Generalmente es mejor dejarlo en cero.<br><br>ADVERTENCIA: El valor de Ganancia o el Avance, deben establecerse por encima de 20, o D no aumentará como debería. Establecer ambos a cero bloqueará D en el valor base.",
         "description": "D Max feature helpicon message"
     },
-    "pidTuningDMinFeatureHelp": {
+    "pidTuningDMaxFeatureHelp": {
         "message": "D Max incrementa D durante movimientos rápidos de giro y\/o mando.<br><br>El factor de Ganancia incrementa D cuando la aeronave gira rápidamente o se agita en turbulencias. Habitualmente sólo la Ganancia es necesaria.<br><br>El factor Avance incrementa D hacia D Max con los movimientos de los mandos. Normalmente no se necesita y deber ser cero. Puede ser útil para aeronaves con baja autoridad que tienden a sobregirar fuertemente.<br><br>Valores de Ganancia altos (por ejemplo 40) se adaptan mejor al estilo freestyle elevando D más rápidamente.<br><br>ADVERTENCIA: El valor de Ganancia o el Avance, deben establecerse por encima de 20, o D no aumentará como debería. Establecer ambos a cero bloqueará D en el valor base.",
         "description": "D Max feature helpicon message"
     },
-    "pidTuningDMinHelp": {
-        "message": "Amortiguación de CUALQUIER movimiento de la aeronave.<br \/><br \/>Se opone al movimiento causado por entradas de los mandos o influencias externas (por ejemplo turbulencias o rachas de viento)<br \/><br \/>Un valor más alto de D Min proporciona más estabilidad y reduce los sobregiros.<br \/><br \/>D amplifica el ruido (magnifica entre 10x y 100x). Esto puede quemar los motores si los valores son demasiado altos o si la D no tiene los filtros correctos.<br \/><br \/>El término D es un poco como el amortiguador de tu coche.",
-        "description": "Derivative helpicon message on PID table titlebar"
+    "pidTuningDerivativeHelp": {
+        "message": "Controla la fuerza del amortiguado de CUALQUIER movimiento de la aeronave. Para movimientos de mandos, el Término D amortigua la orden. Para influencias externas (turbulencias o ráfagas de viento) el Término D amortigua la influencia.<br><br>Valores más altos proporcionan amortiguado y reducen sobre giros producidos el Término P y FF.<br>Lamentablemente, el Término D es MUY sensible a vibraciones de alta frecuencia (amplifica el ruido de 10x a 100x).<br><br>El ruido de alta frecuencia puede causar calentamiento de los motores e incluso quemados de los mismos si el valor de D es demasiado alto o el ruido del giro no está bien filtrado (ver pestaña Filtros).<br><br>Piensa en el Término D como el amortiguador de tu coche, pero con la propiedad negativa inherente de amplificar el ruido de alta frecuencia.",
+        "description": "Derivative Term helpicon message on PID table titlebar"
     },
     "pidTuningPidSettings": {
         "message": "Ajustes del Controlador PID"
@@ -1933,19 +1962,12 @@
         "message": "Controla pequeños desplazamientos persistentes.<br><br>Similar a P, pero acumula progresivamente y lentamente hasta que el error es cero. Importante para tendencias más largas en el tiempo, como un desplazamiento del centro de gravedad, o influencias externas persistentes como el viento.<br \/><br \/>Valores más altos proporciona un seguimiento más ajustado, especialmente en giros, pero pueden hacer que parezca que la aeronave se resiste a los cambios.<br><br>Puede causar oscilaciones lentas en construcciones de baja autoridad o si tiene un valor muy alto en proporción a P.",
         "description": "Integral Term helpicon message on PID table titlebar"
     },
-    "pidTuningDerivative": {
-        "message": "Derivativo (D)"
-    },
     "pidTuningDMax": {
         "message": "D Max (D)"
     },
     "pidTuningDMaxHelp": {
         "message": "Proporciona una amortiguación más intensa para maniobras rápidas que de otro modo podrían causar un sobregiro excesivo. <br><br>Permite un valor de D min menor de lo usual, manteniendo los motores más frios, y giros más rápidos, pero eleva D para controlar el sobregiro en flips o cambios rápidos. <br><br>Más útil para carreras, construcciones ruidosas o máquinas de baja autoridad.",
         "description": "D Max Term helpicon message on PID table titlebar"
-    },
-    "pidTuningDerivativeHelp": {
-        "message": "Controla la fuerza del amortiguado de CUALQUIER movimiento de la aeronave. Para movimientos de mandos, el Término D amortigua la orden. Para influencias externas (turbulencias o ráfagas de viento) el Término D amortigua la influencia.<br><br>Valores más altos proporcionan amortiguado y reducen sobre giros producidos el Término P y FF.<br>Lamentablemente, el Término D es MUY sensible a vibraciones de alta frecuencia (amplifica el ruido de 10x a 100x).<br><br>El ruido de alta frecuencia puede causar calentamiento de los motores e incluso quemados de los mismos si el valor de D es demasiado alto o el ruido del giro no está bien filtrado (ver pestaña Filtros).<br><br>Piensa en el Término D como el amortiguador de tu coche, pero con la propiedad negativa inherente de amplificar el ruido de alta frecuencia.",
-        "description": "Derivative Term helpicon message on PID table titlebar"
     },
     "pidTuningFeedforward": {
         "message": "Prealimentación (F)"
@@ -4196,11 +4218,11 @@
     },
     "pidTuningDMaxGainSlider": {
         "message": "Amortiguación dinámica:<br \/><i><small>D Max<\/small><\/i>",
-        "description": "D Min slider label"
+        "description": "D Max slider label"
     },
     "pidTuningDMaxGainSliderHelp": {
         "message": "Aumenta D max, el máximo valor que D puede incrementarse durante movimientos rápidos.<br \/><br \/>Para aeronaves de carreras, donde el deslizador principal de amortiguación ha sido ajustado bajo para minimizar el calor de los motores, mover este deslizador hacia la derecha mejorará el control al sobregiro para cambios rápidos de dirección.<br \/><br \/>Para aeronaves HD o cinemáticas, la inestabilidad en vuelo recto se corrige mejor moviendo el deslizador de Amortiguación (no el de Amortiguación dinámica) hacia la derecha. Verifica siempre la temperatura del motor y escucha por si hay ruidos extraños al hacer movimientos rápidos si mueves este deslizador hacia la derecha.<br \/><br \/>Para aeronaves freestyle, especialmente construcciones pesadas, mover el deslizador hacia la derecha ayudará a controlar el sobregiro en flips y rolls.<br \/><br \/><strong>Nota:<\/strong><br \/> Generalmente el sobregiro en flips y rolls es producido por no tener suficiente 'Relajar I Term', desincronizaciones de motor, o autoridad inadecuada (saturación de motores). Si al mover la Amortiguación dinámica a la derecha no mejora el sobregiro en flips y rolls, vuelve a la posición \"normal\" y busca la razón del sobregiro o bamboleo.",
-        "description": "D_min slider helpicon message"
+        "description": "D Max slider helpicon message"
     },
     "pidTuningRollPitchRatioSlider": {
         "message": "Amortiguación de Pitch:<br \/><i><small>Pitch:Roll D<\/small><\/i>",
@@ -7315,6 +7337,14 @@
     },
     "showNotifications": {
         "message": "Mostrar notificaciones para operaciones largas"
+    },
+    "notificationsDeniedTitle": {
+        "message": "Notificaciones bloqueadas",
+        "description": "Title when Notifications has no or denied permissions"
+    },
+    "notificationsDenied": {
+        "message": "Las notificaciones están bloqueadas. Por favor, actívalas en la configuración de tu navegador. De lo contrario, no recibirás notificaciones sobre operaciones largas. Si estás usando Chrome, puedes activar las notificaciones haciendo clic en el icono de la barra de direcciones y seleccionando 'Configuración del sitio'.",
+        "description": "Message when Notifications has no or denied permissions"
     },
     "flashEraseDoneNotification": {
         "message": "El borrado de la memoria flash ha sido completado",

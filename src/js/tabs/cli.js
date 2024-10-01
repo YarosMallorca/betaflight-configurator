@@ -1,5 +1,5 @@
 import { i18n } from "../localization";
-import Clipboard from "../Clipboard";
+import BFClipboard from "../Clipboard";
 import { generateFilename } from "../utils/generate_filename";
 import GUI, { TABS } from '../gui';
 import BuildApi from '../BuildApi';
@@ -12,6 +12,7 @@ import jBox from "jbox";
 import $ from 'jquery';
 import { serialShim } from "../serial_shim";
 import FileSystem from "../FileSystem";
+import { ispConnected } from "../utils/connection";
 
 const serial =  serialShim();
 
@@ -88,7 +89,7 @@ function copyToClipboard(text) {
         console.warn(ex);
     }
 
-    Clipboard.writeText(text, onCopySuccessful, onCopyFailed);
+    BFClipboard.writeText(text, onCopySuccessful, onCopyFailed);
 }
 
 cli.initialize = function (callback) {
@@ -229,7 +230,7 @@ cli.initialize = function (callback) {
         });
 
         $('a.support')
-        .toggle(navigator.onLine)
+        .toggle(ispConnected())
         .on('click', function() {
 
             function submitSupportData(data) {

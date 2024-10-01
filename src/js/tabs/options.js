@@ -7,7 +7,8 @@ import DarkTheme, { setDarkTheme } from '../DarkTheme';
 import { checkForConfiguratorUpdates } from '../utils/checkForConfiguratorUpdates';
 import { checkSetupAnalytics } from '../Analytics';
 import $ from 'jquery';
-import CONFIGURATOR from '../data_storage';
+import NotificationManager from '../utils/notifications';
+import { ispConnected } from '../utils/connection';
 
 const options = {};
 options.initialize = function (callback) {
@@ -29,7 +30,9 @@ options.initialize = function (callback) {
         TABS.options.initDarkTheme();
         TABS.options.initShowDevToolsOnStartup();
         TABS.options.initShowNotifications();
+        TABS.options.initUserLanguage();
         TABS.options.initShowWarnings();
+        TABS.options.initMeteredConnection();
 
         GUI.content_ready(callback);
     });
@@ -186,10 +189,79 @@ options.initShowNotifications = function () {
     const result = getConfig("showNotifications");
     $("div.showNotifications input")
         .prop("checked", !!result.showNotifications)
-        .change(function () {
-            setConfig({ showNotifications: $(this).is(":checked") });
+        .on('change', function () {
+            const element = $(this);
+            const enabled = element.is(':checked');
+
+            if (enabled) {
+                const informationDialog = {
+                    title : i18n.getMessage("notificationsDeniedTitle"),
+                    text: i18n.getMessage("notificationsDenied"),
+                    buttonConfirmText: i18n.getMessage("OK"),
+                };
+
+                switch (NotificationManager.checkPermission()) {
+                    case 'granted':
+                        setConfig({ showNotifications: enabled });
+                        break;
+                    case 'denied':
+                        // disable notifications if permission is denied
+                        GUI.showInformationDialog(informationDialog);
+                        element.prop('checked', false);
+                        break;
+                    case 'default':
+                        // need to request permission first before enabling notifications
+                        element.prop('checked', false);
+                        NotificationManager.requestPermission().then((permission) => {
+                            if (permission === 'granted') {
+                                // enable notifications if permission is granted
+                                setConfig({ showNotifications: enabled });
+                                // trigger change event to update the switchery
+                                element.prop('checked', true).trigger('change');
+                            } else {
+                                GUI.showInformationDialog(informationDialog);
+                            }
+                        });
+                }
+
+            }
+
+            setConfig({ showNotifications: element.is(":checked") });
         })
         .change();
+};
+
+options.initMeteredConnection = function () {
+    const result = getConfig("meteredConnection");
+    $("div.meteredConnection input")
+    .prop("checked", !!result.meteredConnection)
+    .on('change', function () {
+        setConfig({ meteredConnection: $(this).is(":checked") });
+        // update network status
+        ispConnected();
+    })
+    .trigger('change');
+};
+
+options.initUserLanguage = function () {
+    const userLanguage = i18n.selectedLanguage;
+    const userLanguageElement = $('#userLanguage');
+    const languagesAvailables = i18n.getLanguagesAvailables();
+    userLanguageElement.append(`<option value="DEFAULT">${i18n.getMessage('language_default')}</option>`);
+    userLanguageElement.append('<option disabled>------</option>');
+    languagesAvailables.forEach(element => {
+        const languageName = i18n.getMessage(`language_${element}`);
+        userLanguageElement.append(`<option value="${element}">${languageName}</option>`);
+    });
+
+    userLanguageElement
+    .val(userLanguage)
+    .on('change', e => {
+        i18n.changeLanguage(e.target.value);
+        // translate to user-selected language
+        i18n.localizePage();
+    })
+    .trigger('change');
 };
 
 // TODO: remove when modules are in place

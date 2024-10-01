@@ -17,6 +17,8 @@ import { updateTabList } from "../utils/updateTabList";
 import { isInt, getMixerImageSrc } from "../utils/common";
 import * as d3 from 'd3';
 import $ from 'jquery';
+import semver from "semver-min";
+import { API_VERSION_1_47 } from "../data_storage.js";
 
 const motors = {
     previousDshotBidir: null,
@@ -764,7 +766,7 @@ motors.initialize = async function (callback) {
             $('div.digitalIdlePercent').toggle(protocolConfigured && digitalProtocol);
             $('div.idleMinRpm').toggle(protocolConfigured && digitalProtocol && FC.MOTOR_CONFIG.use_dshot_telemetry);
 
-            if (FC.ADVANCED_TUNING.idleMinRpm && FC.MOTOR_CONFIG.use_dshot_telemetry) {
+            if (semver.lt(FC.CONFIG.apiVersion, API_VERSION_1_47) && FC.ADVANCED_TUNING.idleMinRpm && FC.MOTOR_CONFIG.use_dshot_telemetry) {
                 $('div.digitalIdlePercent').hide();
             }
 
@@ -1216,8 +1218,7 @@ motors.initialize = async function (callback) {
     function setup_motor_output_reordering_dialog(callbackFunction, zeroThrottleValue)
     {
         const domDialogMotorOutputReorder = $('#dialogMotorOutputReorder');
-        const idleThrottleValue = zeroThrottleValue + 60;
-
+        const idleThrottleValue = zeroThrottleValue + FC.PID_ADVANCED_CONFIG.digitalIdlePercent * 1000 / 100;
         const motorOutputReorderComponent = new MotorOutputReorderComponent($('#dialogMotorOutputReorderContent'),
             callbackFunction, mixerList[FC.MIXER_CONFIG.mixer - 1].name,
             zeroThrottleValue, idleThrottleValue);
@@ -1248,9 +1249,7 @@ motors.initialize = async function (callback) {
     function SetupdescDshotDirectionDialog(callbackFunction, zeroThrottleValue)
     {
         const domEscDshotDirectionDialog = $('#escDshotDirectionDialog');
-
-        const idleThrottleValue = zeroThrottleValue + 60;
-
+        const idleThrottleValue = zeroThrottleValue + FC.PID_ADVANCED_CONFIG.digitalIdlePercent * 1000 / 100;
         const motorConfig = {
             numberOfMotors: self.numberOfValidOutputs,
             motorStopValue: zeroThrottleValue,
