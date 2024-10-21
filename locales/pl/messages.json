@@ -256,7 +256,7 @@
         "message": "Urządzenie - <span class=\"message-positive\">Gotowe<\/span>"
     },
     "tabFirmwareFlasher": {
-        "message": "Wgraj oprogramowanie"
+        "message": "Wgraj Oprogramowanie"
     },
     "tabLanding": {
         "message": "Witaj"
@@ -304,7 +304,7 @@
         "message": "OSD"
     },
     "tabVtx": {
-        "message": "Nadajnik wideo "
+        "message": "Nadajnik Wideo"
     },
     "tabPower": {
         "message": "Zasilanie i Akumulator"
@@ -331,7 +331,7 @@
         "message": "Czarna Skrzynka"
     },
     "tabAdjustments": {
-        "message": "Korekty"
+        "message": "Modyfikacje"
     },
     "tabAuxiliary": {
         "message": "Tryby Lotu"
@@ -647,7 +647,7 @@
         "message": "<span class=\"message-positive\">Zapisano<\/span> zmiany w EEPROM"
     },
     "defaultWelcomeIntro": {
-        "message": "Witaj w <strong>Betaflight - Configurator<\/strong>, narzędziu stworzonym by uprościć aktualizację i konfigurację Twojego kontrolera lotu."
+        "message": "Witaj w <strong>Betaflight Configurator<\/strong>, narzędziu zaprojektowanym, aby uprościć aktualizację, konfigurację oraz tuning twojego kontrolera lotu."
     },
     "defaultWelcomeHead": {
         "message": "Sprzęt"
@@ -674,10 +674,10 @@
         "message": "Wgraj Oprogramowanie"
     },
     "defaultDonateHead": {
-        "message": "Open Source \/ Informacja o darowiznach"
+        "message": "Informacja o Open Source \/ Darowiznach"
     },
     "defaultDonateText": {
-        "message": "<p><strong>Betaflight<\/strong> to oprogramowanie kontrolera lotu  jest na licencji <strong>open source<\/strong> i jest dostępne <strong>za darmo<\/strong> dla wszystkich użytkowników.<\/p><p>Jeśli używasz oprogramowania Betaflight oraz uważasz je za przydatne, rozważ <strong>wsparcie<\/strong> jego rozwoju poprzez darowiznę.<\/p>"
+        "message": "<p><strong>Betaflight<\/strong> jest oprogramowaniem obsługującym kontroler lotu, udostępnianym za darmo na zasadach licencji <strong>open source<\/strong> wszystkim użytkownikom oraz <strong>bez udzielania gwarancji<\/strong>.<\/p><p>Jeżeli według ciebie oprogramowanie Betaflight oraz Betaflight Configurator są przydatnymi narzędziami, rozważ <strong>wsparcie<\/strong> ich rozwoju wpłacając darowiznę.<\/p>"
     },
     "defaultDonateBottom": {
         "message": "<p>Jeśli chcesz wspierać nas finansowo na bieżąco, powinieneś rozważyć możliwość zostania naszym subskrybentem $t(patreonLink.message).<\/p>"
@@ -699,7 +699,7 @@
         "message": "Dokumentacja Betaflight dostępna jest w formie do wydania oraz w formie elektronicznej.<br \/><br \/>"
     },
     "defaultDocumentation1": {
-        "message": "Wiki Betaflight jest świetnym źródłem informacji, można je znaleźć <a href=\"https:\/\/betaflight.com\/docs\/wiki\" target=\"_blank\" rel=\"noopener noreferrer\">tutaj<\/a>."
+        "message": "Świetnym źródłem informacji jest Wiki Betaflight, znajdziesz ją <a href=\"https:\/\/betaflight.com\/docs\/wiki\" target=\"_blank\" rel=\"noopener noreferrer\">tutaj<\/a>."
     },
     "defaultDocumentation2": {
         "message": "Z wykazem zmian w obecnym oprogramowaniu możesz się zapoznać na stronie GitHub, <a href=\"https:\/\/github.com\/Betaflight\/Betaflight\/releases\" target=\"_blank\" rel=\"noopener noreferrer\">tutaj<\/a>."
@@ -708,13 +708,13 @@
         "message": "Pomoc"
     },
     "defaultSupportSubline1": {
-        "message": "Pomoc"
+        "message": "Źródła Pomocy"
     },
     "defaultSupportSubline2": {
         "message": "Twórcy"
     },
     "defaultSupport": {
-        "message": "Aby uzyskać pomoc, przeszukaj fora lub odwiedź stronę internetową<br \/><br \/>"
+        "message": "Aby uzyskać pomoc, w pierwszej kolejności przeszukaj fora oraz wiki bądź skontaktuj się z dostawcą sprzętu<br \/><br \/>"
     },
     "defaultSupport1": {
         "message": "<a href=\"http:\/\/www.rcgroups.com\/forums\/showthread.php?t=2464844&page=1\" target=\"_blank\" rel=\"noopener noreferrer\">Wątki na forum RC Groups<\/a>"
@@ -723,7 +723,7 @@
         "message": "<a href=\"https:\/\/betaflight.com\/docs\/wiki\" target=\"_blank\" rel=\"noopener noreferrer\">Betaflight Wiki<\/a>"
     },
     "defaultSupport3": {
-        "message": "<a href=\"https:\/\/www.youtube.com\/playlist?list=PLwoDb7WF6c8nT4jjsE4VENEmwu9x8zDiE\" target=\"_blank\" rel=\"noopener noreferrer\">Filmy o Betaflight autorstwa Joshuy Bardwell <\/a>"
+        "message": "<a href=\"https:\/\/www.youtube.com\/playlist?list=PLwoDb7WF6c8nT4jjsE4VENEmwu9x8zDiE\" target=\"_blank\" rel=\"noopener noreferrer\">Filmy o Betaflight autorstwa Joshuy Bardwella <\/a>"
     },
     "defaultSupport4": {
         "message": "<a href=\"https:\/\/github.com\/Betaflight\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub<\/a>"
@@ -784,7 +784,7 @@
         "message": "Typ Modelu"
     },
     "initialSetupThrottleHead": {
-        "message": "Ustawienia gazu"
+        "message": "Ustawienia Przepustnicy"
     },
     "initialSetupMinimum": {
         "message": "Minimum:"
@@ -1067,7 +1067,7 @@
         "message": "Informacje o kompilacji:"
     },
     "initialSetupInfoBuildInfoKey": {
-        "message": "Budowa klucza"
+        "message": "Klucz kompilacji"
     },
     "initialSetupInfoBuildConfig": {
         "message": "Konfiguruj"
@@ -1164,7 +1164,7 @@
         "message": "Kalibracja akcelerometru w czasie lotu"
     },
     "featureRX_SERIAL": {
-        "message": "Numer seryjny (przez UART)"
+        "message": "Połączenie szeregowe (przez UART)"
     },
     "featureMOTOR_STOP": {
         "message": "Nie obracaj śmigłami po uzbrojeniu"
@@ -1371,7 +1371,7 @@
         "message": "Deklinacja magnetometru [stopnie]"
     },
     "configurationReverseMotorSwitch": {
-        "message": "Odwrócono kierunek obrotów silników"
+        "message": "Kierunek silników jest odwrócony"
     },
     "configurationReverseMotorSwitchHelp": {
         "message": "Opcja ta jest używana aby kamera FPV podczas lotów nie brudziła się oraz żeby kurz i inne zanieczyszczenia nie były wdmuchiwane na kontroler lotu. Należy zadbać aby kierunek obrotów silników został odpowiednio odwrócony a śmigła odpowiednio założone.<strong>Ostrzeżenie:<\/strong> Nie zmienia to kierunku obrotów silnika. Użyj narzędzia do konfiguracji swoich ESC lub zamień kolejność przewodów silnika aby to osiągnąć. Upewnij się również bez założonych śmigieł że silniki kręcą się w kierunku jak na grafice powyżej przed próbą uzbrajania."
@@ -1385,11 +1385,11 @@
     "configurationGyroCalOnFirstArm": {
         "message": "Skalibruj żyroskop przy pierwszym uzbrojeniu"
     },
-    "configurationDigitalIdlePercent": {
+    "configurationMotorIdle": {
         "message": "Bieg Jałowy Silnika (%)"
     },
-    "configurationDigitalIdlePercentHelp": {
-        "message": "Wartość Biegu Jałowego Silnika ustala prędkość obrotów silników, gdy przepustnica znajduje się w położeniu minimalnym.<br\/><br\/><strong>Dynamiczny Bieg Jałowy wyłączony<\/strong><br\/><br\/>Najniższa wartość przepustnicy wysyłanej do dowolnego silnika, gdy jest uzbrojony, jako procent całkowitej przepustnicy. Zwiększ go w celu poprawy niezawodności uruchamiania silników, uniknięcia desynchronizacji oraz poprawy reakcji pętli PID przy niskiej przepustnicy.<br\/><br\/>Zbyt niska: silniki mogą nie uruchamiać się niezawodnie, lub ulegać desynchronizacji w końcowej fazie flipa lub rolla lub przy ostrych szarpnięciach przepustnicy.<br\/><br\/>Zbyt wysoka: pojazd może sprawiać wrażenie \"pływającego\".<br\/><br\/><strong>Dynamiczny Bieg Jałowy włączony<\/strong><br\/><br\/>Maksymalna przepustnica dozwolona, po uzbrojeniu, przed startem. Jeśli RPM jest mniejszy niż dyn_idle_min_rpm, lub wynosi zero, ta wartość przepustnicy zostanie wysłana do silników. Gdy silniki zaczynają się obracać, przepustnica jest regulowana tak, aby utrzymać ustawioną RPM, ale nie może przekraczać tej wartości, dopóki quad nie wystartuje.<br\/><br\/>Zbyt niska: silniki mogą nie uruchamiać się niezawodnie.<br\/><br\/>Zbyt wysoka: dron może podskakiwać na ziemi przed startem."
+    "configurationMotorIdleHelp": {
+        "message": "Definiuje prędkość biegu jałowego silników w momencie, gdy quad jest zarmowany, a przepustnica znajduje się w położeniu minimalnym (poniżej `min_check`).<br\/><br\/><strong class=\"message-positive\">Dynamiczny Bieg Jałowy wyłączony<\/strong><br\/><br\/>Każdy silnik otrzymuje `min_command` plus procent Biegu Jałowego Silnika.<br\/><br\/><b>Bieg Jałowy jest zbyt niski<\/b>: silniki mogą nie uruchamiać się niezawodnie, powoli się rozpędzać lub desynchronizować w końcowej fazie flipa lub rolla.<br\/><br\/><b>Bieg Jałowy jest zbyt wysoki<\/b>: pojazd \"pływa\" po polu startowym.<br\/><br\/><b>Uwaga<\/b>: należy skalibrować analogowe ESC, aby silniki startowały tuż po przekroczeniu `min_command`.<br\/><br\/><strong class=\"message-positive\">Dynamiczny Bieg Jałowy włączony<\/strong><br\/><br\/>Po zarmowaniu „normalna” wartość biegu jałowego jest wysyłana do każdego silnika, aż wszystkie się rozpędzą.<br\/><br\/>Po tym sygnał do silnika jest dostosowywany tak, aby osiągnąć docelowy RPM.<br\/><br\/>Przed wystartowaniem, sygnał do silnika jest ograniczony do wartości Biegu Jałowego Silnika a ustawiony RPM może nie zostać osiągnięty. To jest OK. Gdy przepustnica jest podnoszona powyżej procentu `airmode_motor_start_throttle`, limit jest o wiele wyższy, a ustawiona wartość RPM powinna być osiągnięta na biegu jałowym.<br\/><br\/><b>Bieg Jałowy jest zbyt niski<\/b>: silniki mogą nie uruchamiać się niezawodnie<br\/><br\/><b>Bieg Jałowy jest zbyt wysoki<\/b>: potrząsanie przed wystartowaniem (tylko gdy Dynamiczny Bieg Jałowy jest również wysoki)<br\/><br\/><b>Uwaga<\/b>: Dynamiczny Bieg Jałowy wymaga DShot oraz DShot Telemetry."
     },
     "configurationMotorPoles": {
         "message": "Bieguny silnika",
@@ -1486,7 +1486,7 @@
         "message": "Rozlega się sygnał dźwiękowy, gdy drążek jest w pozycji rozbrojenia"
     },
     "beeperARMED": {
-        "message": "Ostrzegawcze sygnały dźwiękowe gdy kontroler lotu jest uzbrojony a silniki są wyłączone podczas bezczynności (sygnały będą powtarzane dopóki kontroler lotu nie zostanie rozbrojony lub do momętu gdy przepustnica zostanie podniesiona)"
+        "message": "Ostrzegawcze sygnały dźwiękowe, gdy kontroler lotu jest uzbrojony a silniki są wyłączone podczas bezczynności (sygnały będą powtarzane, dopóki kontroler lotu nie zostanie rozbrojony lub do momentu, gdy przepustnica zostanie podniesiona)"
     },
     "beeperSYSTEM_INIT": {
         "message": "Sygnał dźwiękowy podczas Inicjalizacji, emitowany gdy kontroler lotu jest włączony"
@@ -1710,7 +1710,7 @@
         "message": "Profil $1"
     },
     "pidTuningRateProfileOption": {
-        "message": "Rateprofile $1"
+        "message": "Profil Rate $1"
     },
     "portsFunction_LIDAR_TF": {
         "message": "Benewake LIDAR"
@@ -1722,7 +1722,7 @@
         "message": "Ustawienia profilu PID"
     },
     "pidTuningSubTabRates": {
-        "message": "Ustawienia profilu Rate"
+        "message": "Ustawienia Profilu Rate"
     },
     "pidTuningSubTabFilter": {
         "message": "Ustawienia filtrów"
@@ -1734,7 +1734,7 @@
         "message": "Nazwa profilu PID, która określa, do jakich warunków ten profil dostosowano: lżejszy\/cięższy akumulator, kamera akcji\/brak kamery akcji, większe wznoszenie itp."
     },
     "rateProfileName": {
-        "message": "Nazwa profilu"
+        "message": "Nazwa Profilu Rate"
     },
     "rateProfileNameHelp": {
         "message": "Podaj nazwę profilu, która może opisywać, do jakiego rodzaju latania jest przeznaczony ten profil: film, wyścig, styl dowolny itp."
@@ -1908,10 +1908,10 @@
         "message": "Feedforward dostosowuje reakcję drążka.<br \/><br \/> Te opcje pozwalają dostosować go, aby zapewnić wszystko, od wyraźnych, natychmiastowych reakcji drążka podczas wyścigów po miękkie, płynne reakcje w zastosowaniach kinowych\/HD."
     },
     "pidTuningFeedforwardJitter": {
-        "message": "Redukcja Jittera"
+        "message": "Redukcja Drgań"
     },
     "pidTuningFeedforwardJitterHelp": {
-        "message": "Redukcja jittera zmniejsza sprzężenie do przodu, gdy drążki poruszają się powoli, niezależnie od ich pozycji.<br><br>Umożliwia to płynny lot bez jittera podczas wykonywania płynnych, wolnych łuków, a jednocześnie zapewnia pełne sprzężenie do przodu bez żadnych opóźnień, gdy drążki poruszają się szybko. Przejście nie jest wymagane i powinno być ustawione na zero, gdy redukcja jittera jest aktywna.<br><br>Domyślnie 7. Wyższe wartości, np. 10-12, są dobre do zastosowań kinowych lub freestyle HD, 5 może być lepsze do ściganie się z szybkimi linkami RC."
+        "message": "Redukcja Drgań zmniejsza Feedforward, gdy drążki poruszane są powoli, niezależnie od ich pozycji.<br><br>Umożliwia to płynny lot bez drgań podczas wykonywania gładkich, wolnych łuków, a jednocześnie zapewnia pełny Feedforward bez żadnych opóźnień, gdy drążki poruszane są szybko. Parametr Przejście nie jest wymagany i powinien być ustawiony na zero, gdy Redukcja Drgań jest aktywna.<br><br>Domyślnie 7. Wyższe wartości, np. 10-12, są dobre do zastosowań cinematic lub freestyle HD, 5 może być lepsze do ścigania się z użyciem szybkich linków RC."
     },
     "pidTuningFeedforwardSmoothFactor": {
         "message": "Wygładzenie"
@@ -2080,13 +2080,13 @@
         "message": "Kopiuj profil"
     },
     "pidTuningCopyRateProfile": {
-        "message": "Kopiuj profil"
+        "message": "Kopiuj Profil Rate"
     },
     "dialogCopyProfileText": {
         "message": "Skopiuj wartości z obecnego profilu do"
     },
     "dialogCopyRateProfileText": {
-        "message": "Skopiuj wartości z obecnego profilu rate'ów do"
+        "message": "Skopiuj wartości z obecnego Profilu Rate do"
     },
     "dialogCopyProfileTitle": {
         "message": "Skopiuj wartości z profilu"
@@ -2489,7 +2489,7 @@
         "description": "Help text to VTX PIT MODE mode"
     },
     "adjustmentsHelp": {
-        "message": "Skonfiguruj przełączniki regulacji. Szczegółowe informacje można znaleźć w sekcji „Korekty podczas lotu”. Zmiany wprowadzone przez funkcje regulacji nie są zapisywane automatycznie."
+        "message": "Konfiguruj modyfikacje przełączników. Szczegółowe informacje można znaleźć w sekcji „Korekty podczas lotu”. Zmiany, które wprowadzają funkcje modyfikacji, nie są zapisywane automatycznie."
     },
     "adjustmentsColumnEnable": {
         "message": "Jeśli włączone"
@@ -3168,6 +3168,12 @@
     "cliConfirmSnippetBtn": {
         "message": "Wykonaj"
     },
+    "cliPanelTitle": {
+        "message": "Interfejs Wiersza Poleceń"
+    },
+    "cliCommand": {
+        "message": "Tutaj wprowadź polecenie"
+    },
     "loggingNote": {
         "message": "Dane będą zbierane <span class=\"message-negative\">wyłącznie w tym oknie<\/span>, opuszczenie tego okna <span class=\"message-negative\">zatrzyma<\/span> zbieranie danych, a program przejdzie w <strong>tryb standardowej pracy<\/strong>.<br \/>Możesz zmieniać globalne ustawienia aktualizacji, dane będą zapisywane do pliku co <strong>1<\/strong> sekundę."
     },
@@ -3425,7 +3431,7 @@
         "message": "Włącz, jeśli twój kontroler lotu jest w trybie DFU. np. jeśli włączyłeś swój kontroler za pomocą zwarcia dwóch pinów bootloadera lub przytrzymując przycisk BOOT."
     },
     "firmwareFlasherFlashOnConnect": {
-        "message": "Wgraj w momęcie połączenia"
+        "message": "Wgraj w momencie połączenia"
     },
     "firmwareFlasherFlashOnConnectDescription": {
         "message": "Próba automatycznego flashowania kontrolera lotu (uruchamiana przez nowo wykryty port szeregowy).<br \/><br \/><span class=\"message-negative\">UWAGA<\/span>: Ta funkcja wyłącza funkcję automatycznego wykrywania i tworzenia kopii zapasowych."
@@ -3446,7 +3452,7 @@
         "message": "Port"
     },
     "firmwareFlasherManualBaud": {
-        "message": "Ręczna prędkość transmisji"
+        "message": "Wybór prędkości transmisji"
     },
     "firmwareFlasherManualBaudDescription": {
         "message": "Ręczny wybór szybkości przesyłania, dla kontrolerów lotu które nie obsługują domyślnej prędkości lub połączenia przez bluetooth.<br \/><span class=\"message-negative\"> Uwaga:<\/span> Nie używane podczas połączenia przez DFU USB"
@@ -3464,13 +3470,13 @@
         "message": "Wczytywanie ..."
     },
     "firmwareFlasherOptionLabelBuildTypeRelease": {
-        "message": "Wydania stabilne"
+        "message": "Wersje stabilne"
     },
     "firmwareFlasherOptionLabelBuildTypeReleaseCandidate": {
-        "message": "Wydania testowe"
+        "message": "Wersje stabilne z przedpremierowymi"
     },
     "firmwareFlasherOptionLabelBuildTypeDevelopment": {
-        "message": "Wydania deweloperskie"
+        "message": "Wersje rozbudowane"
     },
     "firmwareFlasherOptionLabelBuildTypeAKK3_3": {
         "message": "3.3 AKK & RDQ VTX Patch"
@@ -4187,7 +4193,7 @@
         "description": "Tuning Slider High header"
     },
     "pidTuningMasterSlider": {
-        "message": "Główny mnożnik:",
+        "message": "Główny Mnożnik:",
         "description": "Master tuning slider label"
     },
     "pidTuningMasterSliderHelp": {
@@ -4195,7 +4201,7 @@
         "description": "Master Gain tuning slider helpicon message"
     },
     "pidTuningDGainSlider": {
-        "message": "Tłumienie:<br \/><i><small>Wzmocnienia D<\/small><\/i>",
+        "message": "Tłumienie:<br \/><i><small>Wzmacnia parametr D<\/small><\/i>",
         "description": "D Gain (Damping) tuning slider label"
     },
     "pidTuningDGainSliderHelp": {
@@ -4203,7 +4209,7 @@
         "description": "D gain balance tuning slider helpicon message"
     },
     "pidTuningPIGainSlider": {
-        "message": "Śledzenie:<br \/><i><small>P & I Gains<\/small><\/i>",
+        "message": "Śledzenie:<br \/><i><small>Wzmacnia parametry P oraz I<\/small><\/i>",
         "description": "P and I Gain (Stability) tuning slider label"
     },
     "pidTuningPIGainSliderHelp": {
@@ -4211,7 +4217,7 @@
         "description": "P and I gain tuning slider helpicon message"
     },
     "pidTuningResponseSlider": {
-        "message": "Odpowiedź na drążek:<br \/><i><small>Wzmocnienia FF<\/small><\/i>",
+        "message": "Odpowiedź na Drążek:<br \/><i><small>Wzmacnia parametr FF<\/small><\/i>",
         "description": "Response tuning slider label"
     },
     "pidTuningResponseSliderHelp": {
@@ -4219,7 +4225,7 @@
         "description": "Stick response gain tuning slider helpicon message"
     },
     "pidTuningIGainSlider": {
-        "message": "Dryf — chybotanie:<br \/><i><small>I Gains<\/small><\/i>",
+        "message": "Dryfowanie - Chybotanie:<br \/><i><small>Wzmacnia parametr I<\/small><\/i>",
         "description": "I-term slider label"
     },
     "pidTuningIGainSliderHelp": {
@@ -4227,7 +4233,7 @@
         "description": "I-gain Gain tuning slider helpicon message"
     },
     "pidTuningDMaxGainSlider": {
-        "message": "Tłumienie dynamiczne:<br \/><i><small>D Max<\/small><\/i>",
+        "message": "Tłumienie Dynamiczne:<br \/><i><small>Wzmacnia parametr D Max<\/small><\/i>",
         "description": "D Max slider label"
     },
     "pidTuningDMaxGainSliderHelp": {
@@ -4243,7 +4249,7 @@
         "description": "Pitch-Roll Ratio tuning slider helpicon message"
     },
     "pidTuningPitchPIGainSlider": {
-        "message": "Śledzenie Pitch:<br><i><small>Pitch:Roll P & I & FF<\/small><\/i>",
+        "message": "Śledzenie osi Pitch:<br><i><small>Pitch: Wzmacnia parametry P, I oraz FF w osi Roll<\/small><\/i>",
         "description": "Pitch P & I slider label"
     },
     "pidTuningPitchPIGainSliderHelp": {
@@ -4503,7 +4509,7 @@
         "message": "Gyro"
     },
     "pidTuningItermRelaxTypeOptionSetpoint": {
-        "message": "Ustawienie drążka"
+        "message": "Wartość zadana"
     },
     "pidTuningItermRelaxCutoff": {
         "message": "Odcięcie",
@@ -4847,7 +4853,7 @@
         "message": "Skalibrowana skala napięcia:"
     },
     "powerVoltageId10": {
-        "message": "Bateria"
+        "message": "Akumulator"
     },
     "powerVoltageId20": {
         "message": "5V"
@@ -4934,7 +4940,7 @@
         "message": "$1 A"
     },
     "powerAmperageId10": {
-        "message": "Bateria"
+        "message": "Akumulator"
     },
     "powerAmperageId50": {
         "message": "ESC łącznie"
@@ -4997,7 +5003,7 @@
         "message": "Skalibrowana skala natężenia prądu:"
     },
     "powerBatteryHead": {
-        "message": "Bateria"
+        "message": "Akumulator"
     },
     "powerStateHead": {
         "message": "Stan zasilania"
@@ -6049,7 +6055,7 @@
         "message": "Data i czas zegara czasu rzeczywistego"
     },
     "osdTextStatBattery": {
-        "message": "Napięcie baterii",
+        "message": "Napięcie akumulatora",
         "description": "One of the statistics that can be shown at the end of the flight in the OSD"
     },
     "osdDescStatBattery": {
@@ -6540,7 +6546,7 @@
         "description": "vtx device are not ready"
     },
     "vtxDeviceReady": {
-        "message": "Urządzenie gotowe",
+        "message": "Gotowość urządzenia",
         "description": "Text of one of the fields of the VTX tab"
     },
     "vtxPower": {
@@ -6767,7 +6773,7 @@
         "message": "Jednostka latająca nie uzbroi się jeśli jest pochylona o kąt większy niż ustalony. Działa tylko jeśli akcelerometr jest włączony. Ustawienie kąta 180 definitywnie wyłączy tą funkcje"
     },
     "configurationBatteryVoltage": {
-        "message": "Napięcie baterii"
+        "message": "Napięcie akumulatora"
     },
     "configurationBatteryCurrent": {
         "message": "Prąd baterii"
@@ -6806,13 +6812,13 @@
         "message": "Profil"
     },
     "pidTuningProfileTip": {
-        "message": "W kontrolerze lotu można zapisać do 3 (a w niektórych kontrolerach 2) różnych profili Pid. Profile zawierają ustawienia Pid, wartości zadane i ustawienia Kąt\/Horyzont. Będąc w terenie, można używać prostych poleceń drążka i przełączać się między profilami za pomocą aparatury Rc (patrz instrukcje online)."
+        "message": "W kontrolerze lotu można zapisać do 3 (a w niektórych kontrolerach 2) różnych profili PID. Profile w tej zakładce zawierają ustawienia PID, Wartości zadane oraz ustawienia trybów Angle i Horizon. Będąc w terenie można w prosty sposób, przełącznikami na aparaturze radiowej, zmieniać te profile (patrz instrukcje online)."
     },
     "pidTuningRateProfile": {
         "message": "Profil Rate"
     },
     "pidTuningRateProfileTip": {
-        "message": "W kontrolerze lotu można przechowywać do 3 różnych profili. Zawierają one ustawienia RC Rate, Rate, RC Expo, Throle oraz TPA. Przełączanie między profilami jest możliwe podczas lotu, poprzez ustawienie 3-pozycyjnego przełącznika w zakładce „Korekty”."
+        "message": "W kontrolerze lotu można przechowywać do 3 różnych Profili Rate. Zawierają one ustawienia: RC Rate, Rate, RC Expo, Przepustnica oraz TPA. Przełączanie między Profilami Rate jest możliwe podczas lotu, poprzez ustawienie 3-pozycyjnego przełącznika w zakładce „Modyfikacje”."
     },
     "pidTuningRateSetup": {
         "message": "Podstawowy\/Acro Rates"
