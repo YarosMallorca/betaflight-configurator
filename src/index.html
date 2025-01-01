@@ -28,6 +28,7 @@
         ></betaflight-logo>
         <port-picker
             v-model="PortHandler.portPicker"
+            :connected-bluetooth-devices="PortHandler.currentBluetoothPorts"
             :connected-serial-devices="PortHandler.currentSerialPorts"
             :connected-usb-devices="PortHandler.currentUsbPorts"
             :show-virtual-option="PortHandler.showVirtualMode"
@@ -42,13 +43,11 @@
                     :vbatmaxcellvoltage="FC.BATTERY_CONFIG.vbatmaxcellvoltage"
                     :vbatwarningcellvoltage="FC.BATTERY_CONFIG.vbatwarningcellvoltage"
                     :batteryState="FC.BATTERY_STATE?.batteryState"
-                    :vbatcellcount="FC.BATTERY_STATE?.cellCount"
                 >
                 </battery-icon>
                 <battery-legend
                     :voltage="FC.ANALOG.voltage"
                     :vbatmaxcellvoltage="FC.BATTERY_CONFIG.vbatmaxcellvoltage"
-                    :vbatcellcount="FC.BATTERY_STATE?.cellCount"
                 ></battery-legend>
                 <div class="bottomStatusIcons">
                     <div class="armedicon cf_tip" i18n_title="mainHelpArmed"></div>

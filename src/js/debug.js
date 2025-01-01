@@ -1,5 +1,5 @@
 import FC from './fc.js';
-import { API_VERSION_1_47 } from './data_storage';
+import { API_VERSION_1_46, API_VERSION_1_47 } from './data_storage';
 import semver from "semver";
 
 const DEBUG = {
@@ -98,6 +98,8 @@ const DEBUG = {
         "S_TERM",
         "SPA",
         "TASK",
+        "GIMBAL",
+        "WING_SETPOINT",
     ],
 
     fieldNames: {
@@ -763,6 +765,24 @@ const DEBUG = {
             'debug[6]': 'Difference estimated vs actual',
             'debug[7]': 'Late count',
         },
+        'GIMBAL': {
+            'debug[all]': 'Gimbal',
+            'debug[0]': 'Headtracker Roll',
+            'debug[1]': 'Headtracker Pitch',
+            'debug[2]': 'Headtracker Yaw',
+            'debug[3]': 'Gimbal Roll',
+            'debug[4]': 'Gimbal Pitch',
+            'debug[5]': 'Gimbal Yaw',
+        },
+        'WING_SETPOINT': {
+            'debug[all]': 'Wing Setpoint',
+            'debug[0]': 'Current Setpoint [roll]',
+            'debug[1]': 'Adjusted Setpoint [roll]',
+            'debug[2]': 'Current Setpoint [pitch]',
+            'debug[3]': 'Adjusted Setpoint [pitch]',
+            'debug[4]': 'Current Setpoint [yaw]',
+            'debug[5]': 'Adjusted Setpoint [yaw]',
+        },
     },
 
     enableFields: [
@@ -784,7 +804,28 @@ const DEBUG = {
 };
 
 function update() {
+    if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_46)) {
+        DEBUG.fieldNames.ATTITUDE = {
+            'debug[all]': 'Attitude',
+            'debug[0]': 'Roll Angle',
+            'debug[1]': 'Pitch Angle',
+            'debug[2]': 'Ground Speed Factor',
+            'debug[3]': 'Heading Error',
+            'debug[4]': 'Velocity to Home',
+            'debug[5]': 'Ground Speed Error Ratio',
+            'debug[6]': 'Pitch Forward Angle',
+            'debug[7]': 'dcmKp Gain',
+        };
+    }
+
     if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_47)) {
+        DEBUG.modes.splice(DEBUG.modes.indexOf('GPS_RESCUE_THROTTLE_PID'), 1, 'AUTOPILOT_ALTITUDE');
+        DEBUG.modes.splice(DEBUG.modes.indexOf('GYRO_SCALED'), 1);
+        DEBUG.modes.splice(DEBUG.modes.indexOf('RANGEFINDER_QUALITY') + 1, 0, 'OPTICALFLOW');
+        DEBUG.modes.push('AUTOPILOT_POSITION');
+        delete DEBUG.fieldNames.GPS_RESCUE_THROTTLE_PID;
+        delete DEBUG.fieldNames.GYRO_SCALED;
+
         DEBUG.fieldNames.FFT_FREQ = {
             'debug[all]': 'Debug FFT FREQ',
             'debug[0]': 'Gyro Pre Dyn Notch [dbg-axis]',
@@ -796,15 +837,6 @@ function update() {
             'debug[6]': 'Notch 6 Center Freq [dbg-axis]',
             'debug[7]': 'Notch 7 Center Freq [dbg-axis]',
         };
-        DEBUG.fieldNames.TPA = {
-            'debug[all]': 'TPA',
-            'debug[0]': 'TPA Factor',
-            'debug[1]': 'TPA Pitch Angle Factor (Wing)',
-            'debug[2]': 'TPA Argument (Wing)',
-        };
-
-        DEBUG.modes.splice(DEBUG.modes.indexOf('GPS_RESCUE_THROTTLE_PID'), 1, 'AUTOPILOT_ALTITUDE');
-        delete DEBUG.fieldNames.GPS_RESCUE_THROTTLE_PID;
 
         DEBUG.fieldNames.AUTOPILOT_ALTITUDE = {
             'debug[all]': 'Autopilot Altitude',
@@ -817,6 +849,41 @@ function update() {
             'debug[6]': 'Altitude D',
             'debug[7]': 'Altitude F',
         };
+
+        DEBUG.fieldNames.TPA = {
+            'debug[all]': 'TPA',
+            'debug[0]': 'TPA Factor',
+            'debug[1]': 'TPA Attitude Roll (Wing)',
+            'debug[2]': 'TPA Attitude Pitch (Wing)',
+            'debug[3]': 'TPA Calculated Throttle (Wing)',
+            'debug[4]': 'TPA Speed (Wing)',
+            'debug[5]': 'TPA Argument (Wing)',
+        };
+
+        DEBUG.fieldNames.OPTICALFLOW = {
+            'debug[all]': 'Optical Flow',
+            'debug[0]': 'Quality',
+            'debug[1]': 'Raw flow rates X',
+            'debug[2]': 'Raw flow rates Y',
+            'debug[3]': 'Processed flow rates X',
+            'debug[4]': 'Processed flow rates Y',
+            'debug[5]': 'Delta time',
+        };
+        
+        DEBUG.fieldNames.AUTOPILOT_POSITION = {
+            'debug[all]': 'Autopilot Position',
+            'debug[0]': 'Distance',
+            'debug[1]': 'GPS Distance',
+            'debug[2]': 'PID Sum EF',
+            'debug[3]': 'Angle',
+            'debug[4]': 'pidP',
+            'debug[5]': 'pidI',
+            'debug[6]': 'pidD',
+            'debug[7]': 'pidA',
+        };
+
+        DEBUG.enableFields.splice(DEBUG.enableFields.indexOf("Gyro") + 1, 0, "Attitude");
+        DEBUG.enableFields.push("Servo");
     }
 }
 

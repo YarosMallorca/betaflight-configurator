@@ -655,7 +655,7 @@
         "message": "Contribuir"
     },
     "defaultContributingText": {
-        "message": "Si quieres ayudar a hacer Betaflight incluso mejor puedes hacerlo de diferentes maneras, incluyendo:<br \/><ul><li>usando tu conocimiento de Betaflight para crear o actualizar contenido en <a href=\"https:\/\/betaflight.com\/docs\/wiki\" target=\"_blank\" rel=\"noopener noreferrer\">nuestra wiki<\/a>, o respondiendo preguntas de otros usuarios en foros online;<\/li><li><a href=\"https:\/\/betaflight.com\/docs\/development\" target=\"_blank\" rel=\"noopener noreferrer\">>contribuyendo con código<\/a> al firmware y al configurador - nuevas funcionalidades, correcciones, mejoras;<\/li><li>probando <a href=\"https:\/\/github.com\/Betaflight\/betaflight\/pulls\" target=\"_blank\" rel=\"noopener noreferrer\">nuevas funcionalidades y correcciones<\/a> y comentando resultados;<\/li><li>ayudando a otros usuario con los problemas que reportan en <a href=\"https:\/\/github.com\/betaflight\/betaflight\/issues\" target=\"_blank\" rel=\"noopener noreferrer\">nuestro registro de incidencias<\/a>, y participando en las discusiones sobre peticiones de nuevas funcionalidades;<\/li><li><a href=\"https:\/\/github.com\/betaflight\/betaflight\/tree\/master\/README.md#Translators\" target=\"_blank\" rel=\"noopener noreferrer\">traduciendo<\/a> Betaflight Configurator a un nuevo idioma, o ayudando a mantener las traducciones existentes.<\/li><\/ul>"
+        "message": "Si quieres ayudar a hacer Betaflight incluso mejor puedes hacerlo de diferentes maneras, incluyendo:<br \/><ul><li>usando tu conocimiento de Betaflight para crear o actualizar contenido en <a href=\"https:\/\/betaflight.com\/docs\/wiki\" target=\"_blank\" rel=\"noopener noreferrer\">nuestra wiki<\/a>, o respondiendo preguntas de otros usuarios en foros online;<\/li><li><a href=\"https:\/\/betaflight.com\/docs\/development\" target=\"_blank\" rel=\"noopener noreferrer\">contribuyendo con código<\/a> al firmware y al configurador - nuevas funcionalidades, correcciones, mejoras;<\/li><li>probando <a href=\"https:\/\/github.com\/Betaflight\/betaflight\/pulls\" target=\"_blank\" rel=\"noopener noreferrer\">nuevas funcionalidades y correcciones<\/a> y comentando resultados;<\/li><li>ayudando a otros usuario con los problemas que reportan en <a href=\"https:\/\/github.com\/betaflight\/betaflight\/issues\" target=\"_blank\" rel=\"noopener noreferrer\">nuestro registro de incidencias<\/a>, y participando en las discusiones sobre peticiones de nuevas funcionalidades;<\/li><li><a href=\"https:\/\/github.com\/betaflight\/betaflight\/tree\/master\/README.md#Translators\" target=\"_blank\" rel=\"noopener noreferrer\">traduciendo<\/a> Betaflight Configurator a un nuevo idioma, o ayudando a mantener las traducciones existentes.<\/li><\/ul>"
     },
     "defaultFacebookText": {
         "message": "También tenemos un <a href=\"https:\/\/www.facebook.com\/groups\/betaflightgroup\/\" target=\"_blank\" rel=\"noopener noreferrer\">Grupo de Facebook<\/a>.<br \/>Únete a nosotros para tener un lugar donde hablar sobre Betaflight, preguntar sobre configuraciones, o simplemente charlar con otros pilotos."
@@ -1018,6 +1018,10 @@
         "message": "No hay ningún protocolo de salida para los motores seleccionado",
         "description": "Message that pops up to describe the MOTOR_PROTO arming disable flag"
     },
+    "initialSetupArmingDisableFlagsTooltipCRASHFLIP": {
+        "message": "Interruptor boca abajo después de choque está activado",
+        "description": "Message that pops to describe the CRASHFLIP arming disable flag"
+    },
     "initialSetupArmingDisableFlagsTooltipARM_SWITCH": {
         "message": "Una de las otras banderas de desarmado estaba activa al armar",
         "description": "Message that pops up to describe the ARM_SWITCH arming disable flag"
@@ -1240,6 +1244,9 @@
     "featureAIRMODE": {
         "message": "Activar Airmode permanentemente"
     },
+    "featureAIRMODETip": {
+        "message": "$t(auxiliaryHelpMode_AIRMODE.message)"
+    },
     "featureRX_SPI": {
         "message": "SPI Rx (ej. Rx incorporado)"
     },
@@ -1434,7 +1441,7 @@
         "message": "Tono de la Baliza"
     },
     "configurationDshotBeaconHelp": {
-        "message": "La baliza Dshot usa los ESCs y motores para producir sonido. Esto implica que la baliza Dshot no puede ser usada cuando los motores están girando. En Betaflight 3.4 y posterior, cuando se intenta armar mientras la baliza Dshot está activa, hay una pausa de 2 segundos después del último tono de la baliza Dshot antes de realizar el armado. Esto se hace así para evitar que la funcionalidad de baliza Dshot interfiera con los comandos Dshot que se envían al armar.<br\/><strong>Atención:<\/strong> Como la baliza Dshot envía corriente a los motores mientras está activa, puede producir un exceso de calor y dañar los motores y \/ o los ESCs si la fuerza de la baliza está configurada muy alta. Usa BLHeli Configurator o BLHeli Suite para ajustar y testear la fuerza de la baliza."
+        "message": "La baliza Dshot usa los ESCs y motores para producir sonido. Esto implica que la baliza Dshot no puede ser usada cuando los motores están girando. En Cleanflight 3.4 y posterior, cuando se intenta armar mientras la baliza Dshot está activa, hay una pausa de 2 segundos después del último tono de la baliza Dshot antes de realizar el armado. Esto se hace así para evitar que la funcionalidad de baliza Dshot interfiera con los comandos Dshot que se envían al armar.<br\/><strong>Atención:<\/strong> Como la baliza Dshot envía corriente a los motores mientras está activa, puede producir un exceso de calor y dañar los motores y \/ o los ESCs si la fuerza de la baliza está configurada muy alta. Usa BLHeli Configurator o BLHeli Suite para ajustar y testear la fuerza de la baliza."
     },
     "configurationBeeper": {
         "message": "Configuración de Avisos Acústicos"
@@ -1806,10 +1813,6 @@
         "message": "D Max incrementa D durante movimientos rápidos de giro y\/o mando.<br><br>El factor de Ganancia incrementa D cuando la aeronave gira rápidamente o se agita en turbulencias. Habitualmente sólo la Ganancia es necesaria.<br><br>El factor Avance incrementa D hacia D Max con los movimientos de los mandos. Normalmente no se necesita y deber ser cero. Puede ser útil para aeronaves con baja autoridad que tienden a sobregirar fuertemente.<br><br>Valores de Ganancia altos (por ejemplo 40) se adaptan mejor al estilo freestyle elevando D más rápidamente.<br><br>ADVERTENCIA: El valor de Ganancia o el Avance, deben establecerse por encima de 20, o D no aumentará como debería. Establecer ambos a cero bloqueará D en el valor base.",
         "description": "D Max feature helpicon message"
     },
-    "pidTuningDerivativeHelp": {
-        "message": "Controla la fuerza del amortiguado de CUALQUIER movimiento de la aeronave. Para movimientos de mandos, el Término D amortigua la orden. Para influencias externas (turbulencias o ráfagas de viento) el Término D amortigua la influencia.<br><br>Valores más altos proporcionan amortiguado y reducen sobre giros producidos el Término P y FF.<br>Lamentablemente, el Término D es MUY sensible a vibraciones de alta frecuencia (amplifica el ruido de 10x a 100x).<br><br>El ruido de alta frecuencia puede causar calentamiento de los motores e incluso quemados de los mismos si el valor de D es demasiado alto o el ruido del giro no está bien filtrado (ver pestaña Filtros).<br><br>Piensa en el Término D como el amortiguador de tu coche, pero con la propiedad negativa inherente de amplificar el ruido de alta frecuencia.",
-        "description": "Derivative Term helpicon message on PID table titlebar"
-    },
     "pidTuningPidSettings": {
         "message": "Ajustes del Controlador PID"
     },
@@ -1974,6 +1977,10 @@
     "pidTuningDMaxHelp": {
         "message": "Proporciona una amortiguación más intensa para maniobras rápidas que de otro modo podrían causar un sobregiro excesivo. <br><br>Permite un valor de D min menor de lo usual, manteniendo los motores más frios, y giros más rápidos, pero eleva D para controlar el sobregiro en flips o cambios rápidos. <br><br>Más útil para carreras, construcciones ruidosas o máquinas de baja autoridad.",
         "description": "D Max Term helpicon message on PID table titlebar"
+    },
+    "pidTuningDerivativeHelp": {
+        "message": "Controla la fuerza del amortiguado de CUALQUIER movimiento de la aeronave. Para movimientos de mandos, el Término D amortigua la orden. Para influencias externas (turbulencias o ráfagas de viento) el Término D amortigua la influencia.<br><br>Valores más altos proporcionan amortiguado y reducen sobre giros producidos el Término P y FF.<br>Lamentablemente, el Término D es MUY sensible a vibraciones de alta frecuencia (amplifica el ruido de 10x a 100x).<br><br>El ruido de alta frecuencia puede causar calentamiento de los motores e incluso quemados de los mismos si el valor de D es demasiado alto o el ruido del giro no está bien filtrado (ver pestaña Filtros).<br><br>Piensa en el Término D como el amortiguador de tu coche, pero con la propiedad negativa inherente de amplificar el ruido de alta frecuencia.",
+        "description": "Derivative Term helpicon message on PID table titlebar"
     },
     "pidTuningFeedforward": {
         "message": "Prealimentación (F)"
@@ -2257,7 +2264,7 @@
         "message": "Vista Previa"
     },
     "receiverMspWarningText": {
-        "message": "Estos controles permiten armar y probar Betaflight sin que haya un transmisor o receptor presente. Sin embargo, <strong>esta característica no está diseñada para el vuelo y las hélices no deben estar puestas.<\/strong> <br \/><br \/>Esta funcionalidad no garantiza un control fiable de la aeronave. <strong>Pueden producirse lesiones graves si se dejan las hélices puestas.<\/strong>"
+        "message": "Estos controles permiten armar y probar Betaflight sin que haya un transmisor o receptor presente. Sin embargo, <strong>esta característica no está diseñada para el vuelo y las hélices no deben estar puestas.<\/strong> <br><br>Esta funcionalidad no garantiza un control fiable de la aeronave. <strong>Pueden producirse lesiones graves si se dejan las hélices puestas.<\/strong>"
     },
     "receiverMspEnableButton": {
         "message": "Activar controles"
@@ -2296,7 +2303,7 @@
     "auxiliaryModeLogicAND": {
         "message": "Y"
     },
-    "auxiliaryHelpMode_3D": {
+    "auxiliaryHelpMode_3DDISABLE": {
         "message": "Activa la dirección del motor reversible para proporcionar acelerador negativo y permitir el vuelo invertido. El acelerador se convierte en -100 a +100 en lugar de 0 a 100",
         "description": "Help text to 3D mode"
     },
@@ -2317,8 +2324,12 @@
         "description": "Help text to ANTIGRAVITY mode"
     },
     "auxiliaryHelpMode_AIRMODE": {
-        "message": "En el mezclador \/ modo estándar, cuando el roll, el pitch y el yaw se calculan y saturan un motor, todos los motores se reducen por igual. Cuando un motor va por debajo del mínimo se recorta. Si tenías tu acelerador justo por encima del mínimo y tratas de hacer un roll rápido - ya que dos motores no pueden bajar, obtienes esencialmente la mitad de la potencia (la mitad de la ganancia de tu PID). Si tus comandos hubieran pedido más de un 100% de diferencia entre los motores altos y bajos, los motores bajos se recortarían, rompiendo la simetría del balance del motor al reducir la ganancia desigualmente",
+        "message": "AirMode permite mantener la estabilidad de la aeronave con acelerador bajo. Para obtener más información, consulta <a href=\"https:\/\/betaflight.com\/docs\/development\/modes#airmode\" target=\"_blank\" rel=\"noopener noreferrer\">AirMode<\/a> en Betaflight.com.",
         "description": "Help text to AIRMODE mode"
+    },
+    "auxiliaryHelpMode_ALTHOLD": {
+        "message": "El modo Altitud es el modo manual no GPS más seguro para los pilotos novatos. Es parecido al modo estabilizado, pero además bloquea la altitud del vehículo cuando se sueltan los mandos",
+        "description": "Help text for ALTITUDE HOLD mode"
     },
     "auxiliaryHelpMode_BEEPER": {
         "message": "Activar pitidos - útil para localizar una aeronave estrellada",
@@ -2431,6 +2442,10 @@
     "auxiliaryHelpMode_PIDAUDIO": {
         "message": "Usar para activar PIDAUDIO",
         "description": "Help text to PIDAUDIO mode"
+    },
+    "auxiliaryHelpMode_POSHOLD": {
+        "message": "Modo mantener posición",
+        "description": "Help text to POSHOLD mode"
     },
     "auxiliaryHelpMode_PREARM": {
         "message": "Al intentar armar, se necesita que este interruptor esté activado antes de armar. Se suele asignar a un interruptor temporal del mando",
@@ -2615,6 +2630,9 @@
     },
     "adjustmentsFunction30": {
         "message": "Selección de Perfil LED"
+    },
+    "adjustmentsFunction31": {
+        "message": "Ajustar brillo de LED"
     },
     "adjustmentsSave": {
         "message": "Guardar"
@@ -3163,6 +3181,12 @@
     },
     "cliConfirmSnippetBtn": {
         "message": "Ejecutar"
+    },
+    "cliPanelTitle": {
+        "message": "Interfaz de línea de comandos"
+    },
+    "cliCommand": {
+        "message": "Introduce el comando aquí"
     },
     "loggingNote": {
         "message": "Los datos se registran <span class=\"message-negative\">sólamente<\/span> en este apartado, abandonar el apartado <span class=\"message-negative\">cancelará<\/span> el registro y la aplicación volverá al estado normal del <strong>\"configurator\"<\/strong>.<br \/> Puedes elegir cualquier período de actualización global, los datos se almacenarán en el archivo de log cada <strong>1<\/strong> segundo por razones de rendimiento."
@@ -4375,7 +4399,7 @@
         "description": "Text for one of the parameters of the RPM Filter"
     },
     "pidTuningRpmHarmonicsHelp": {
-        "message": "Número de armónicos por motor. Un valor de 3 (recomendado para la mayoría de quads) generará 3 filtros notch por motor, por cada eje, totalizando 36 filtros notch. Uno en la frecuencia base del motor y dos armónicos en múltiplos de esa frecuencia base.",
+        "message": "Número de armónicos por motor. Un valor de 3 (recomendado para la mayoría de aeronaves) generará 3 filtros notch por motor, por cada eje, totalizando 36 filtros notch. Uno en la frecuencia base del motor y dos armónicos en múltiplos de esa frecuencia base.",
         "description": "Help text for one of the parameters of the RPM Filter"
     },
     "pidTuningRpmMinHz": {
@@ -4443,7 +4467,7 @@
         "message": "Compensación de Caída de Tensión"
     },
     "pidTuningVbatSagCompensationHelp": {
-        "message": "Proporciona un rendimiento consistente del acelerador y del PID sobre el rango de voltaje de la batería utilizable incrementando la salida del motor según el voltaje de la batería va cayendo.<br \/><br \/> La cantidad de compensación puede variar entre el 0 y el 100 %. Se recomienda compensación completa (100%).<br \/><br \/>Visita <a href=\"https:\/\/betaflight.com\/docs\/tuning\/4.2-Tuning-Notes#dynamic-battery-sag-compensation\" target=\"_blank\" rel=\"noopener noreferrer\">esta entrada de la wiki<\/a> para más información."
+        "message": "Proporciona un rendimiento consistente del acelerador y del PID sobre el rango de voltaje de la batería utilizable incrementando la salida del motor según el voltaje de la batería va cayendo.<br \/><br \/> La cantidad de compensación puede variar entre el 0 y el 100 %. Se recomienda compensación completa (100%).<br \/><br \/>Visita <a href=\"https:\/\/betaflight.com\/docs\/wiki\/tuning\/4-2-tuning-notes#dynamic-battery-sag-compensation\" target=\"_blank\" rel=\"noopener noreferrer\">esta entrada de la wiki<\/a> para más información."
     },
     "pidTuningVbatSagValue": {
         "message": "%"
@@ -5160,7 +5184,7 @@
         "message": "Ajustes VTX"
     },
     "osdSetupCraftNameTitle": {
-        "message": "Nombre Aeronave"
+        "message": "Nombre aeronave"
     },
     "osdSetupWarningsTitle": {
         "message": "Avisos"
@@ -5458,7 +5482,7 @@
         "message": "Muestra las 3 mejores vueltas según el GPS"
     },
     "osdTextElementCraftName": {
-        "message": "Identificador: nombre de la aeronave",
+        "message": "Nombre aeronave",
         "description": "One of the elements of the OSD"
     },
     "osdDescElementCraftName": {
@@ -5486,6 +5510,38 @@
     "osdTextElementAltitudeVariantNoDecimalASL": {
         "message": "ASL (sobre el nivel del mar, sin decimales)",
         "description": "One of the variants of the altitude element of the OSD"
+    },
+    "osdTextElementCustomMsg0": {
+        "message": "Mensaje personalizado 1",
+        "description": "One of the elements of the OSD"
+    },
+    "osdTextElementCustomMsg1": {
+        "message": "Mensaje personalizado 2",
+        "description": "One of the elements of the OSD"
+    },
+    "osdTextElementCustomMsg2": {
+        "message": "Mensaje personalizado 3",
+        "description": "One of the elements of the OSD"
+    },
+    "osdTextElementCustomMsg3": {
+        "message": "Mensaje personalizado 4",
+        "description": "One of the elements of the OSD"
+    },
+    "osdDescElementCustomMsg0": {
+        "message": "Mensaje personalizado 1 desde dispositivo externo",
+        "description": "Description of the custom message 1 element of the OSD"
+    },
+    "osdDescElementCustomMsg1": {
+        "message": "Mensaje personalizado 2 desde dispositivo externo",
+        "description": "Description of the custom message 2 element of the OSD"
+    },
+    "osdDescElementCustomMsg2": {
+        "message": "Mensaje personalizado 3 desde dispositivo externo",
+        "description": "Description of the custom message 3 element of the OSD"
+    },
+    "osdDescElementCustomMsg3": {
+        "message": "Mensaje personalizado 4 desde dispositivo externo",
+        "description": "Description of the custom message 4 element of the OSD"
     },
     "osdTextElementOnTime": {
         "message": "Tiempo encendido",
@@ -6191,15 +6247,15 @@
     },
     "osdTimerSourceOptionTotalArmedTime": {
         "message": "Tiempo armado total",
-        "description": "One of the options for the source timer. This options shows the amount of time the craft was armed since the battery was plugged"
+        "description": "One of the options for the source timer. This options shows the amount of time the aircraft was armed since the battery was plugged"
     },
     "osdTimerSourceOptionLastArmedTime": {
         "message": "Tiempo del último armado",
-        "description": "One of the options for the source timer. This options shows the amount of time the craft was armed the latest time"
+        "description": "One of the options for the source timer. This options shows the amount of time the aircraft was armed the latest time"
     },
     "osdTimerSourceOptionOnArmTime": {
         "message": "Tiempo encendido\/armado",
-        "description": "One of the options for the source timer. This option shows On time when craft is disarmed, and Armed time when armed"
+        "description": "One of the options for the source timer. This option shows On time when aircraft is disarmed, and Armed time when armed"
     },
     "osdTimerPrecision": {
         "message": "Precisión:"
@@ -6611,6 +6667,10 @@
         "message": "Número de bandas",
         "description": "Text of one of the fields of the VTX Table element in the VTX tab"
     },
+    "vtxTableBandsHelp": {
+        "message": "Esto define el número de bandas necesarias para el VTX",
+        "description": "Help for the number of bands field of the VTX Table element in the VTX tab"
+    },
     "vtxTableChannels": {
         "message": "Número de canales por banda",
         "description": "Text of one of the fields of the VTX Table element in the VTX tab"
@@ -6845,7 +6905,7 @@
         "message": "Personalización"
     },
     "craftName": {
-        "message": "Nombre de la aeronave"
+        "message": "Nombre aeronave"
     },
     "configurationCraftNameHelp": {
         "message": "Se puede mostrar en los registros, los nombres de los archivos de copia de seguridad y el OSD.<\/br>Se puede establecer a través de la variable CLI <b>craft_name<\/b>."
@@ -7300,6 +7360,9 @@
     "firmwareFlasherBuildMotorProtocols": {
         "message": "Protocolo de motor"
     },
+    "firmwareFlasherBuildOsdProtocols": {
+        "message": "Protocolo OSD"
+    },
     "firmwareFlasherConfigurationFile": {
         "message": "Nombre de archivo de configuración:"
     },
@@ -7317,6 +7380,9 @@
     },
     "firmwareFlasherMotorProtocolDescription": {
         "message": "Selecciona el protocolo de motor (ESC) que deseas incluir en esta compilación. Ten en cuenta que esto es un desplegable, pero sólo se puede seleccionar un elemento."
+    },
+    "firmwareFlasherOsdProtocolDescription": {
+        "message": "Selecciona el protocolo OSD que quieres incluir en esta compilación. Ten en cuenta que esto es un menú desplegable, únicamente puedes seleccionar un elemento."
     },
     "firmwareFlasherBranchDescription": {
         "message": "Especialmente útil para desarrolladores, puedes seleccionar un PR incluido en el código, especificar el sha de un commit, o especificar un PR 'todavía no incluido' escribiendo una # seguida por el número de PR por eje. #1234 (esto es una abreviatura para la rama 'pull\/1234\/head')."

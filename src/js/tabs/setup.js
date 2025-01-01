@@ -8,7 +8,7 @@ import FC from '../fc';
 import MSP from '../msp';
 import Model from '../model';
 import MSPCodes from '../msp/MSPCodes';
-import { API_VERSION_1_45, API_VERSION_1_46 } from '../data_storage';
+import { API_VERSION_1_45, API_VERSION_1_46, API_VERSION_1_47 } from '../data_storage';
 import { gui_log } from '../gui_log';
 import $ from 'jquery';
 import { ispConnected } from '../utils/connection';
@@ -240,6 +240,10 @@ setup.initialize = function (callback) {
                 disarmFlagElements.splice(disarmFlagElements.indexOf('RPMFILTER'), 1, 'DSHOT_TELEM');
             }
 
+            if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_47)) {
+                disarmFlagElements.splice(disarmFlagElements.indexOf('MOTOR_PROTOCOL'), 0, 'CRASHFLIP');
+            }
+
             // Arming allowed flag
             arming_disable_flags_e.append('<span id="initialSetupArmingAllowed" i18n="initialSetupArmingAllowed" style="display: none;"></span>');
 
@@ -264,8 +268,8 @@ setup.initialize = function (callback) {
 
         const showSensorInfo = function() {
             const gyroElements = [
+                'AUTO',
                 'NONE',
-                'DEFAULT',
                 'MPU6050',
                 'L3G4200D',
                 'MPU3050',
@@ -288,7 +292,7 @@ setup.initialize = function (callback) {
             ];
 
             const accElements = [
-                'DEFAULT',
+                'AUTO',
                 'NONE',
                 'ADXL345',
                 'MPU6050',
@@ -345,6 +349,17 @@ setup.initialize = function (callback) {
                 'TFMINI',
                 'TF02',
             ];
+
+            // remove deprecated sensors
+            if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_47)) {
+                gyroElements.splice(gyroElements.indexOf("L3G4200D"), 1);
+                gyroElements.splice(gyroElements.indexOf("MPU3050"), 1);
+
+                accElements.splice(accElements.indexOf("ADXL345"), 1);
+                accElements.splice(accElements.indexOf("MMA8452"), 1);
+                accElements.splice(accElements.indexOf("BMA280"), 1);
+                accElements.splice(accElements.indexOf("LSM303DLHC"), 1);
+            }
 
             if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_46)) {
                 MSP.send_message(MSPCodes.MSP2_SENSOR_CONFIG_ACTIVE, false, false, function() {

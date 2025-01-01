@@ -81,18 +81,6 @@ export function initializeSerialBackend() {
         }
     });
 
-    $('div.open_firmware_flasher a.flash').click(function () {
-        if ($('div#flashbutton a.flash_state').hasClass('active') && $('div#flashbutton a.flash').hasClass('active')) {
-            $('div#flashbutton a.flash_state').removeClass('active');
-            $('div#flashbutton a.flash').removeClass('active');
-            $('#tabs ul.mode-disconnected .tab_landing a').click();
-        } else {
-            $('#tabs ul.mode-disconnected .tab_firmware_flasher a').click();
-            $('div#flashbutton a.flash_state').addClass('active');
-            $('div#flashbutton a.flash').addClass('active');
-        }
-    });
-
     PortHandler.initialize();
     PortUsage.initialize();
 }
@@ -155,10 +143,6 @@ function connectDisconnect() {
             }
 
         } else {
-            if ($('div#flashbutton a.flash_state').hasClass('active') && $('div#flashbutton a.flash').hasClass('active')) {
-                $('div#flashbutton a.flash_state').removeClass('active');
-                $('div#flashbutton a.flash').removeClass('active');
-            }
             GUI.timeout_kill_all();
             GUI.interval_kill_all();
             GUI.tab_switch_cleanup(() => GUI.tab_switch_in_progress = false);
@@ -275,7 +259,8 @@ function onOpen(openInfo) {
 
         // reset connecting_to
         GUI.connecting_to = false;
-        gui_log(i18n.getMessage('serialPortOpened', serial.connectionType === 'serial' ? [serial.connectionId] : [openInfo.socketId]));
+
+        gui_log(i18n.getMessage('serialPortOpened', [PortHandler.portPicker.selectedPort]));
 
         // save selected port with chrome.storage if the port differs
         let result = getConfig('last_used_port');
@@ -650,6 +635,7 @@ function onConnect() {
         MSP.send_message(MSPCodes.MSP_FEATURE_CONFIG, false, false);
         MSP.send_message(MSPCodes.MSP_BATTERY_CONFIG, false, false);
         MSP.send_message(MSPCodes.MSP_DATAFLASH_SUMMARY, false, false);
+        MSP.send_message(MSPCodes.MSP_SDCARD_SUMMARY, false, false);
 
         if (FC.CONFIG.boardType === 0 || FC.CONFIG.boardType === 2) {
             startLiveDataRefreshTimer();
@@ -704,14 +690,19 @@ export function read_serial(info) {
     }
 }
 
-async function update_live_status() {
+export async function update_sensor_status() {
     const statuswrapper = $('#quad-status_wrapper');
 
-    if (GUI.active_tab !== 'cli' && GUI.active_tab !== 'presets') {
-        await MSP.promise(MSPCodes.MSP_ANALOG);
-        await MSP.promise(MSPCodes.MSP_BATTERY_STATE);
+    await MSP.promise(MSPCodes.MSP_ANALOG);
+    await MSP.promise(MSPCodes.MSP_BATTERY_STATE);
 
-        const nbCells = FC.ANALOG.voltage === 0 || FC.BATTERY_STATE.cellCount === 0 ? 1 : FC.BATTERY_STATE.cellCount;
+    if (FC.ANALOG !== undefined) {
+        let nbCells = Math.floor(FC.ANALOG.voltage / FC.BATTERY_CONFIG.vbatmaxcellvoltage) + 1;
+
+        if (FC.ANALOG.voltage == 0) {
+            nbCells = 1;
+        }
+
         const min = FC.BATTERY_CONFIG.vbatmincellvoltage * nbCells;
         const max = FC.BATTERY_CONFIG.vbatmaxcellvoltage * nbCells;
         const warn = FC.BATTERY_CONFIG.vbatwarningcellvoltage * nbCells;
@@ -729,29 +720,36 @@ async function update_live_status() {
                 $(".battery-status").addClass('state-ok').removeClass('state-warning').removeClass('state-empty');
             }
         }
+    }
 
-        await MSP.promise(MSPCodes.MSP_BOXNAMES);
-        await MSP.promise(MSPCodes.MSP_STATUS_EX);
+    await MSP.promise(MSPCodes.MSP_BOXNAMES);
+    await MSP.promise(MSPCodes.MSP_STATUS_EX);
 
-        const active = (performance.now() - FC.ANALOG.last_received_timestamp) < 300;
-        $(".linkicon").toggleClass('active', active);
+    const active = (performance.now() - FC.ANALOG.last_received_timestamp) < 300;
+    $(".linkicon").toggleClass('active', active);
 
-        for (let i = 0; i < FC.AUX_CONFIG.length; i++) {
-            if (FC.AUX_CONFIG[i] === 'ARM') {
-                $(".armedicon").toggleClass('active', bit_check(FC.CONFIG.mode, i));
-            }
-            if (FC.AUX_CONFIG[i] === 'FAILSAFE') {
-                $(".failsafeicon").toggleClass('active', bit_check(FC.CONFIG.mode, i));
-            }
+    for (let i = 0; i < FC.AUX_CONFIG.length; i++) {
+        if (FC.AUX_CONFIG[i] === 'ARM') {
+            $(".armedicon").toggleClass('active', bit_check(FC.CONFIG.mode, i));
         }
-
-        if (have_sensor(FC.CONFIG.activeSensors, 'gps')) {
-            await MSP.promise(MSPCodes.MSP_RAW_GPS);
+        if (FC.AUX_CONFIG[i] === 'FAILSAFE') {
+            $(".failsafeicon").toggleClass('active', bit_check(FC.CONFIG.mode, i));
         }
+    }
 
-        sensor_status(FC.CONFIG.activeSensors, FC.GPS_DATA.fix);
+    if (have_sensor(FC.CONFIG.activeSensors, 'gps')) {
+        await MSP.promise(MSPCodes.MSP_RAW_GPS);
+    }
 
-        statuswrapper.show();
+    sensor_status(FC.CONFIG.activeSensors, FC.GPS_DATA.fix);
+
+    statuswrapper.show();
+}
+
+async function update_live_status() {
+    // cli or presets tab do not use MSP connection
+    if (GUI.active_tab !== 'cli' && GUI.active_tab !== 'presets') {
+        await update_sensor_status();
     }
 }
 
@@ -792,7 +790,7 @@ export function reinitializeConnection(callback) {
         gui_log(i18n.getMessage('deviceReady'));
     }, 2000);
 
-    if (callback) {
+    if (callback && typeof callback === 'function') {
         callback();
     }
 }

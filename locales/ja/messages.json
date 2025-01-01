@@ -943,7 +943,7 @@
         "description": "Message that pops up to describe the THROTTLE arming disable flag"
     },
     "initialSetupArmingDisableFlagsTooltipANGLE": {
-        "message": "機体が (十分に) 水平ではありません",
+        "message": "機体が(十分に) 水平ではありません",
         "description": "Message that pops up to describe the ANGLE arming disable flag"
     },
     "initialSetupArmingDisableFlagsTooltipBOOT_GRACE_TIME": {
@@ -1017,6 +1017,10 @@
     "initialSetupArmingDisableFlagsTooltipMOTOR_PROTOCOL": {
         "message": "モーター出力プロトコルが選択されていません",
         "description": "Message that pops up to describe the MOTOR_PROTO arming disable flag"
+    },
+    "initialSetupArmingDisableFlagsTooltipCRASHFLIP": {
+        "message": "クラッシュフリップスイッチが有効です",
+        "description": "Message that pops to describe the CRASHFLIP arming disable flag"
     },
     "initialSetupArmingDisableFlagsTooltipARM_SWITCH": {
         "message": "他のフラグの1つはアーム時にフラグを解除します",
@@ -1240,6 +1244,9 @@
     "featureAIRMODE": {
         "message": "エアモードの常時有効化"
     },
+    "featureAIRMODETip": {
+        "message": "$t(auxiliaryHelpMode_AIRMODE.message)"
+    },
     "featureRX_SPI": {
         "message": "SPI受信機 (例: オンボード受信機)"
     },
@@ -1407,7 +1414,7 @@
         "message": "最小スロットル値 (アーム時の最小ESC値)"
     },
     "configurationThrottleMinimumHelp": {
-        "message": "機体がアームし、スロットルスティックが最小位置にあるときにESCに送信される『アイドル値』です。より安定したアイドリング速度を得るために値を増加させてください。また非同期の場合は値を上げてください！"
+        "message": "機体がアームし、スロットルスティックが最小位置にあるときにESCに送信される [アイドル値] です。より安定したアイドリング速度を得るために値を増加させてください。また非同期の場合は値を上げてください！"
     },
     "configurationThrottleMaximum": {
         "message": "最大スロットル値 (アーム時の最大ESC値)"
@@ -1416,7 +1423,7 @@
         "message": "スティック最小値 (ディスアーム時のESC値)"
     },
     "configurationThrottleMinimumCommandHelp": {
-        "message": "これは機体がディスアームされたときにESCに送信される値です。この値をモーターを停止させる値に設定してください。(殆どのESCは1000)"
+        "message": "この値は機体がディスアームした時にESCに渡される値です。モーターがストップした値を設定してください。(ほとんどのESCで1000が使われます)"
     },
     "configurationEscProtocolDisabled": {
         "message": "ESCに適したモーター出力プロトコルを選択してください。$t(escProtocolDisabledMessage.message)"
@@ -1434,7 +1441,7 @@
         "message": "ビーコントーン"
     },
     "configurationDshotBeaconHelp": {
-        "message": "DShotビーコンは、ESCおよびモーターを使用してビーコン音を生成します。これは同時に、モーターが回転しているときにDShotビーコンを使用できないことを意味します。 Betaflight 3.4以降では、DShotビーコンが有効な状態である時にアーミングを試みると、機体がアームされる前、最後に鳴らしたDShotビーコントーンの後に2秒の遅延が起こります。これはDShotビーコン機能が、アーミング中に送信されたDshotコマンドを妨害しないようにするためです。\n<br\/><strong>注:<\/strong> DShotビーコンは、有効な状態のときにモーターへ電流を流しているため、ビーコン強度が強すぎると過剰な熱の発生やモーター、ESCの損傷を招く場合があります。ビーコン強度を調整してテストするには、BLHeli ConfiguratorまたはBLHeli Suiteを使用してください。"
+        "message": "Dshotビーコンは、ESCおよびモーターを使用してビーコン音を生成します。これは同時に、モーターが回転しているときにDshotビーコンを使用できないことを意味します。 Betaflight 3.4以降では、Dshotビーコンが有効な状態である時にアーミングを試みると、機体がアームされる前、最後に鳴らしたDshotビーコントーンの後に2秒の遅延が起こります。これはDshotビーコン機能が、アーミング中に送信されたDshotコマンドを妨害しないようにするためです。\n<br\/><strong>注:<\/strong> Dshotビーコンは、有効な状態のときにモーターへ電流を流しているため、ビーコン強度が強すぎると過剰な熱の発生やモーター、ESCの損傷を招く場合があります。ビーコン強度を調整してテストするには、BLHeli ConfiguratorまたはBLHeli Suiteを使用して下さい。"
     },
     "configurationBeeper": {
         "message": "ビープ音 設定"
@@ -1579,7 +1586,7 @@
         "description": "Option to set the Home Point with the first arm only, not with each arm in the GPS Configuration"
     },
     "configurationGPSHomeOnceHelp": {
-        "message": "有効にすると、バッテリーが接続された後の初回アーム時のみ、ホームポイントとして設定されます。有効でない場合、機体がアームするたびに、ホームポイントが更新されます。",
+        "message": "有効化すると、最初にバッテリーが接続された位置をホームポイントとして使用します。無効化すると、機体にアームする毎にホームポイントが変更されます。",
         "description": "Help text for the option to set the Home Point with the first arm only, not with each arm in the GPS Configuration"
     },
     "configurationSerialRX": {
@@ -1806,10 +1813,6 @@
         "message": "D Max値は、ジャイロやスティックを素早く動かすときにD値を増加させます。<br><br>機体を急旋回させたり、プロップウォッシュでふらついたりすると『強度』係数はD値を増加させます。通常は『強度』だけ調整が必要となります。<br><br>『詳細設定』係数はスティック入力時にD値をD Max方向に増加させる係数です。通常は必要ありませんので、ゼロに設定してください。詳細設定は大きくオーバーシュートしがちな制御の弱い機体に有効です。<br><br>強度の値が高いほど (例えば40)、D値をより容易に上昇させることができ、フリースタイル機体に適している場合があります。<br><br>警告: 強度、詳細のどちらかを20程度以上に設定しないと、D値が正常に増加しません。両方の値をゼロにすると、D値は基準値で固定されます。",
         "description": "D Max feature helpicon message"
     },
-    "pidTuningDerivativeHelp": {
-        "message": "機体のあらゆる動きに対する減衰の強度を制御します。スティックの動きに対し、命令によりD値を減衰させます。外部からの影響 (プロップウォッシュまたは突風) の場合、D値にてその影響を減少させることができます。<br><br>強度を高くすると減衰が大きくなり、P値およびFF値によるオーバーシュートが減少します。<br>ただし、D値はジャイロにおける高周波振動に非常に敏感です。(ノイズ | \n10倍から100倍へ拡大)<br><br>D値強度が高すぎる場合、またはジャイロノイズが適切にフィルター処理されていない場合、高周波ノイズによりモーターが発熱し、モーターが焼損する可能性があります。(フィルタータブ参照) <br><br>D値は自動車のサスペンションのショックアブソーバーとお考えください。ただし高周波ジャイロノイズを増幅させてしまうという、固有のマイナス特性があります。",
-        "description": "Derivative Term helpicon message on PID table titlebar"
-    },
     "pidTuningPidSettings": {
         "message": "PIDコントローラ設定"
     },
@@ -1974,6 +1977,10 @@
     "pidTuningDMaxHelp": {
         "message": "オーバーシュートしやすい素早い操作に対して、より強い減衰力を発揮します。<br><br>基本D Min値を通常より小さくすることで、モーターを低温に保ち、ターンインを速くしますが、フリップや高速反転時のオーバーシュートを抑制するためにD値を高くします。<br><br>レース用機体、ノイズの多い機体、制御の弱い機体に最適です。",
         "description": "D Max Term helpicon message on PID table titlebar"
+    },
+    "pidTuningDerivativeHelp": {
+        "message": "機体のあらゆる動きに対する減衰の強さを制御します。スティックの動きに対し、命令によりD値を減衰させます。外部からの影響 (プロップウォッシュまたは突風) の場合、D値にてその影響を減少させることができます。<br><br>ゲインを高くすると減衰が大きくなり、P値およびFF値によるオーバーシュートが減少します。<br>ただし、D値はジャイロにおける高周波振動に非常に敏感です。(ノイズ | 10倍から100倍へ拡大)<br><br>D値ゲインが高すぎる場合、またはジャイロノイズが適切にフィルター処理されていない場合、高周波ノイズによりモーターが発熱し、モーターが焼損する可能性があります。(フィルタータブ参照) <br><br>D値は自動車のサスペンションのショックアブソーバーとお考えください。ただし高周波ジャイロノイズを増幅させてしまうという、固有のマイナス特性があります。",
+        "description": "Derivative Term helpicon message on PID table titlebar"
     },
     "pidTuningFeedforward": {
         "message": "<b>F<\/b>eedforward"
@@ -2296,16 +2303,16 @@
     "auxiliaryModeLogicAND": {
         "message": "AND"
     },
-    "auxiliaryHelpMode_3D": {
+    "auxiliaryHelpMode_3DDISABLE": {
         "message": "モーターを反転させることで、マイナス推力を発生させ、倒立飛行を可能にします。スロットルは 0 ～ +100 ではなく -100 ～ +100 となります。",
         "description": "Help text to 3D mode"
     },
     "auxiliaryHelpMode_ACROTRAINER": {
-        "message": "アクロモードでの飛行時、機体角度を制限するフライトモード",
+        "message": "アクロモードでの飛行中に機体の角度を制限する飛行モード",
         "description": "Help text to ACRO TRAINER mode"
     },
     "auxiliaryHelpMode_ARM": {
-        "message": "モーター出力を有効にし飛行を可能とします",
+        "message": "モーター出力を有効にすることで機体を飛ばすことができます。",
         "description": "Help text to ARM mode"
     },
     "auxiliaryHelpMode_ANGLE": {
@@ -2317,8 +2324,12 @@
         "description": "Help text to ANTIGRAVITY mode"
     },
     "auxiliaryHelpMode_AIRMODE": {
-        "message": "標準のミキサー \/ モードでは、ロール、ピッチ、ヨーが計算上モーターの強度が飽和状態となると、すべてのモーターが均等に回転が減少します。モーターが最小値を下回ると切り捨て状態となります。例えば、スロットルを最小値より少し上にしてクイックロールをしようとした場合、2つのモーターはそれ以上回転を下げることができないので、実質的に半分のパワー (PID強度の半分) を得ることになります。もし、入力が高回転モーターと低回転モーターの間に100％以上の差を求めたとしたら、低回転モーターは回転が切り捨てられ、強度を不均一に減少させることとなってしまいモーターバランスの対称性を破綻させてしまうでしょう。",
+        "message": "エアーモードでは低いスロットルで機体を安定することができます。詳しい情報はBetaflight.comの<a href=\"https:\/\/betaflight.com\/docs\/development\/modes#airmode\" target=\"_blank\" rel=\"noopener noreferrer\">エアーモード<\/a>を確認してください。",
         "description": "Help text to AIRMODE mode"
+    },
+    "auxiliaryHelpMode_ALTHOLD": {
+        "message": "高度維持モードは初心者にとって最も安全な非GPSでの手動モードです。Stabilisedモードと同じですが、スティックを離すと機体の高度が保たれます。",
+        "description": "Help text for ALTITUDE HOLD mode"
     },
     "auxiliaryHelpMode_BEEPER": {
         "message": "ビープ音を有効にします - 墜落した機体の位置を特定するのに役立ちます",
@@ -2431,6 +2442,10 @@
     "auxiliaryHelpMode_PIDAUDIO": {
         "message": "PIDAUDIOを切り替えます",
         "description": "Help text to PIDAUDIO mode"
+    },
+    "auxiliaryHelpMode_POSHOLD": {
+        "message": "ポジションホールドモード",
+        "description": "Help text to POSHOLD mode"
     },
     "auxiliaryHelpMode_PREARM": {
         "message": "アーミング時、実際にこのスイッチが有効になるのを待ってからアームします",
@@ -2615,6 +2630,9 @@
     },
     "adjustmentsFunction30": {
         "message": "LED Profileの選択"
+    },
+    "adjustmentsFunction31": {
+        "message": "LED 明るさ調整"
     },
     "adjustmentsSave": {
         "message": "保存"
@@ -3890,7 +3908,7 @@
         "message": "警告灯"
     },
     "ledStripIndecatorOverlay": {
-        "message": "インジケーター (マトリクスの位置を利用)"
+        "message": "インジケータ (マトリクスの位置を利用)"
     },
     "colorBlack": {
         "message": "黒色"
@@ -4449,7 +4467,7 @@
         "message": "Vbat サグ値補正"
     },
     "pidTuningVbatSagCompensationHelp": {
-        "message": "バッテリー電圧の低下に応じてモーター出力を増加させることで、使用可能なバッテリー電圧範囲にて一貫したスロットルとPIDパフォーマンスを提供します。<br \/><br \/>補正量は0～100%の間で変更でき、完全な補正 (100%) を推奨します。<br \/><br \/>詳しくは<a href=\"https:\/\/betaflight.com\/docs\/tuning\/4.2-Tuning-Notes#dynamic-battery-sag-compensation\" target=\"_blank\" rel=\"noopener noreferrer\">このWikiエントリ<\/a>をご覧ください。"
+        "message": "バッテリー電圧の低下に応じてモーター出力を増加させることで、使用可能なバッテリー電圧範囲内で一定したスロットルおよびPID性能を提供します。<br \/><br \/>補正量は 0 ～ 100% の間で調整可能です。完全な補正 (100%) が推奨されます。<br \/><br \/>詳しくは<a href=\"https:\/\/betaflight.com\/docs\/wiki\/tuning\/4-2-tuning-notes#dynamic-battery-sag-compensation\" target=\"_blank\" rel=\"noopener noreferrer\">このWikiエントリ<\/a>をご覧ください。"
     },
     "pidTuningVbatSagValue": {
         "message": "%"
@@ -4560,7 +4578,7 @@
         "message": "受信機フェイルセーフ"
     },
     "failsafeFeaturesHelpNew": {
-        "message": "フェイルセーフには２つの段階があります。<strong>ステージ1<\/strong> [第1段階] は送受信間の信号が無効、もしくは不安定な場合、受信機がフェイルセーフ信号を出力した場合、または受信機からの信号が全くない場合に実行され、<span class=\"message-negative\">すべてのチャンネル<\/span>にチャンネルフォールバック設定が適用、復旧可能と設定した時間の中で作動します。<strong>ステージ2<\/strong> [第2段階] は、機体が<span class=\"message-negative\">アーム<\/span>されている際、あらかじめ設定した復旧可能時間よりも長くかかると切り替わり、却下しない限り選択された手順により、すべてのチャンネルが適用されたチャンネルフォールバック設定のままとなります。<br \/><strong>注:<\/strong> ステージ1が作動する前に、チャンネルフォールバック設定は無効な信号になっている個々のAUXチャンネルにも適用されます。"
+        "message": "フェイルセーフには２つの段階があります。<strong>ステージ1<\/strong> [第1段階] は送受信間の信号が無効、もしくは不安定な場合、受信機がフェイルセーフ信号を出力した場合、または受信機からの信号が全くない場合に実行され、<span class=\"message-negative\">全てのチャンネル<\/span>にチャンネルフォールバック設定が適用、復旧可能と設定した時間の中で作動します。<strong>ステージ2<\/strong> [第2段階] は、機体が<span class=\"message-negative\">アーム<\/span>されている際、あらかじめ設定した復旧可能時間よりも長くかかると切り替わり、却下しない限り選択された手順により、全てのチャンネルが適用されたチャンネルフォールバック設定のままとなります。<br \/><strong>注:<\/strong> ステージ1が作動する前に、チャンネルフォールバック設定は無効な信号になっている個々のAUXチャンネルにも適用されます。"
     },
     "failsafePulsrangeTitle": {
         "message": "パルス有効範囲の設定"
@@ -5493,6 +5511,38 @@
         "message": "ASL (小数点なし)",
         "description": "One of the variants of the altitude element of the OSD"
     },
+    "osdTextElementCustomMsg0": {
+        "message": "カスタムメッセージ 1",
+        "description": "One of the elements of the OSD"
+    },
+    "osdTextElementCustomMsg1": {
+        "message": "カスタムメッセージ 2",
+        "description": "One of the elements of the OSD"
+    },
+    "osdTextElementCustomMsg2": {
+        "message": "カスタムメッセージ 3",
+        "description": "One of the elements of the OSD"
+    },
+    "osdTextElementCustomMsg3": {
+        "message": "カスタムメッセージ 4",
+        "description": "One of the elements of the OSD"
+    },
+    "osdDescElementCustomMsg0": {
+        "message": "外部デバイスからのカスタムメッセージ 1",
+        "description": "Description of the custom message 1 element of the OSD"
+    },
+    "osdDescElementCustomMsg1": {
+        "message": "外部デバイスからのカスタムメッセージ 2",
+        "description": "Description of the custom message 2 element of the OSD"
+    },
+    "osdDescElementCustomMsg2": {
+        "message": "外部デバイスからのカスタムメッセージ 3",
+        "description": "Description of the custom message 3 element of the OSD"
+    },
+    "osdDescElementCustomMsg3": {
+        "message": "外部デバイスからのカスタムメッセージ 4",
+        "description": "Description of the custom message 4 element of the OSD"
+    },
     "osdTextElementOnTime": {
         "message": "On time",
         "description": "One of the elements of the OSD"
@@ -5505,7 +5555,7 @@
         "description": "One of the elements of the OSD"
     },
     "osdDescElementFlyTime": {
-        "message": "アーム後の経過時間 (アラーム値を超えると点滅)"
+        "message": "現在の電源で機体にアームした合計時間(上記閾値を超えた時に表示されます)"
     },
     "osdTextElementFlyMode": {
         "message": "飛行モード (Fly)",
@@ -5663,7 +5713,7 @@
         "description": "One of the elements of the OSD"
     },
     "osdDescElementArmedTime": {
-        "message": "機体が最後にアームしてからの時間"
+        "message": "前回アーム時からの経過時間"
     },
     "osdTextElementHomeDirection": {
         "message": "ホームへの方向",
@@ -5768,14 +5818,14 @@
         "description": "One of the elements of the OSD"
     },
     "osdDescAntiGravity": {
-        "message": "アンチグラビティ機能がオンの時、インジケーターを有効にします。"
+        "message": "アンチグラビティ機能がオンの時、インジケータを有効にします。"
     },
     "osdTextGForce": {
         "message": "Gフォース値",
         "description": "One of the elements of the OSD"
     },
     "osdDescGForce": {
-        "message": "どのくらいのGフォースが機体に負荷をかけているかを示す値"
+        "message": "どのくらいのGフォースが機体に負荷をかけているかを示す"
     },
     "osdTextElementMotorDiag": {
         "message": "モーターの診断",
@@ -6006,14 +6056,14 @@
         "description": "One of the statistics that can be shown at the end of the flight in the OSD"
     },
     "osdDescStatFlyTime": {
-        "message": "現在の電源サイクルで機体がアームしている合計時間"
+        "message": "現在の電源における合計アーム時間"
     },
     "osdTextStatArmedTime": {
         "message": "最後にアームした時の飛行時間",
         "description": "One of the statistics that can be shown at the end of the flight in the OSD"
     },
     "osdDescStatArmedTime": {
-        "message": "機体が最後にアームしてからの時間"
+        "message": "前回アーム時からの経過時間"
     },
     "osdTextStatMaxDistance": {
         "message": "ホーム位置最大距離",
@@ -6062,7 +6112,7 @@
         "description": "One of the statistics that can be shown at the end of the flight in the OSD"
     },
     "osdDescStatGForce": {
-        "message": "機体が記録した最大Gフォース値"
+        "message": "機体にかかった最大Gフォース値"
     },
     "osdTextStatEscTemperature": {
         "message": "ESC 最高温度",
@@ -6197,15 +6247,15 @@
     },
     "osdTimerSourceOptionTotalArmedTime": {
         "message": "合計アーム時間",
-        "description": "One of the options for the source timer. This options shows the amount of time the craft was armed since the battery was plugged"
+        "description": "One of the options for the source timer. This options shows the amount of time the aircraft was armed since the battery was plugged"
     },
     "osdTimerSourceOptionLastArmedTime": {
         "message": "直近のアーム時間",
-        "description": "One of the options for the source timer. This options shows the amount of time the craft was armed the latest time"
+        "description": "One of the options for the source timer. This options shows the amount of time the aircraft was armed the latest time"
     },
     "osdTimerSourceOptionOnArmTime": {
         "message": "ON\/アーム時間",
-        "description": "One of the options for the source timer. This option shows On time when craft is disarmed, and Armed time when armed"
+        "description": "One of the options for the source timer. This option shows On time when aircraft is disarmed, and Armed time when armed"
     },
     "osdTimerPrecision": {
         "message": "精度:"
@@ -6616,6 +6666,10 @@
     "vtxTableBands": {
         "message": "バンド数",
         "description": "Text of one of the fields of the VTX Table element in the VTX tab"
+    },
+    "vtxTableBandsHelp": {
+        "message": "VTXに必要なバンド数を定義します",
+        "description": "Help for the number of bands field of the VTX Table element in the VTX tab"
     },
     "vtxTableChannels": {
         "message": "バンド別チャンネル数",
@@ -7306,6 +7360,9 @@
     "firmwareFlasherBuildMotorProtocols": {
         "message": "モータープロトコル"
     },
+    "firmwareFlasherBuildOsdProtocols": {
+        "message": "OSDプロトコル"
+    },
     "firmwareFlasherConfigurationFile": {
         "message": "設定ファイル名:"
     },
@@ -7323,6 +7380,9 @@
     },
     "firmwareFlasherMotorProtocolDescription": {
         "message": "このビルドに含まれるモーター (ESC) プロトコルを選択します。これはドロップダウン操作となりますが、1つの項目しか選択できませんのでご注意ください。"
+    },
+    "firmwareFlasherOsdProtocolDescription": {
+        "message": "このビルドに含まれる送信プロトコルを選択します。これはドロップダウン操作となりますが、1つの項目しか選択できませんのでご注意ください。"
     },
     "firmwareFlasherBranchDescription": {
         "message": "特に開発者にとっては便利な機能で、#の後にPR番号 [例: #1234] を入力することで、マージ済みのPRを選択したり、コミットshaを指定したり「まだマージされていない」PRを指定したりできます。 (これは『pull\/1234\/head』ブランチの省略です)"
